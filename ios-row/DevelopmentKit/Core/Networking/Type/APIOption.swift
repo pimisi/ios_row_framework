@@ -9,7 +9,9 @@
 import Foundation
 
 public struct APIOption {
-    var httpHeaders: [String: String]?
-    var acceptHeader = ["Accept": "application/json"]
     var method: HTTPMethod?
+    var httpHeaders: GenericDictionary?
+    var acceptHeader = Constant.API.Headers.Accept.json
+    var expectedStatusCode: Int?
+    var requestTimeout: TimeInterval? = 150.0
 }

@@ -10,7 +10,7 @@ import Foundation
 
 protocol APIClientProtocol {
     var options: APIOption { get set }
-    var defaultHeaders: [AnyHashable: String] { get }
+    var defaultHeaders: HashableKeyDictionary { get }
     
     static func client(withURL url: String) -> APIClientProtocol?
 }

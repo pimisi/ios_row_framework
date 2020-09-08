@@ -11,8 +11,8 @@ import Foundation
 class APIClient: APIClientProtocol {
     var options = APIOption()
     
-    var defaultHeaders: [AnyHashable : String] {
-        return [:]
+    var defaultHeaders: HashableKeyDictionary {
+        return Constant.API.Headers.ContentType.json
     }
     
     static func client(withURL url: String) -> APIClientProtocol? {

@@ -37,5 +37,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>BaseAPIURLProtocol</key>
+	<string>https</string>
+	<key>BaseROWURL</key>
+	<string>rowapi.gmgamingsystems.com</string>
 </dict>
 </plist>
