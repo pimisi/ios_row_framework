@@ -5,7 +5,7 @@ workspace 'ios-row'
 
 
 def projectPods
-
+  pod 'SwiftLint'
 end
 
 
