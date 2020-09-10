@@ -1,0 +1,43 @@
+setup_travis
+
+REQUIRED_XCODE_VERSION = '11.6'
+default_platform(:ios)
+
+fastlane_require 'behave'
+fastlane_version '2.127.2'
+
+platform :ios do
+  before_all do
+    verify_xcode_version(version: REQUIRED_XCODE_VERSION)
+    ENV['FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT'] = '120'
+  end
+
+  desc 'Runs all the tests for BetwayROW'
+  lane :test_all do
+    reset_simulators
+    clear_derived_data
+    test_betway_row
+    reset_simulators
+  end
+
+  private_lane :verify_xcode_version do
+    ensure_xcode_version(version: REQUIRED_XCODE_VERSION)
+  end
+
+  desc 'This kills the Simulator process, and reset all simulators with Snapshot'
+  lane :reset_simulators do
+    reset_simulator_contents
+  end
+
+  desc 'Runs all the tests for BetwayROW'
+  lane :test_betway_row do
+    scan(scheme: 'BetwayROW', devices: ['iPhone 8'], skip_build: true, clean: false)
+    sh 'mv test_output/report.junit test_output/BetwayROW.xml'
+  end
+
+  desc 'Run all the tests for BetwayROW + Coverage'
+  lane :test_coverage_betway_row do
+    test_betway_row
+    xcov(scheme: 'BetwayROW', skip_slack: true, slack_url: '', slack_channel: 'xcovreport', slack_message: 'BetwayROW test report: Commit ' + last_git_commit[:commit_hash] + ' by ' + last_git_commit[:author], minimum_coverage_percentage: 2.1)
+  end
+end
