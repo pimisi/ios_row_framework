@@ -17,6 +17,10 @@ extension Dictionary {
             return nil
         }
     }
+    
+    mutating func set(value: Value?, for key: Key) {
+       self[key] = value
+   }
 }
 
 extension Dictionary where Key == String {

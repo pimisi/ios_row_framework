@@ -121,3 +121,18 @@ extension Constant.API {
         }
     }
 }
+
+extension Constant.API  {
+    class Network: ConstantType {
+        class Error: ConstantType {
+            static let noInternetConnection = UIMessage(title: "Internet connection unavailable", detail: "You are not connected to the internet.\n\nPlease connect and try again.")
+            static let offline = UIMessage(title: "Network offline", detail: "The network is currently offline.\n\nPlease check your connection and try again.")
+        }
+        
+        public class Status {
+            public static let online = "NetowrkOnline"
+            public static let unknown = "NetowrkUnknown"
+            static let offline = "NetowrkOffline"
+        }
+    }
+}

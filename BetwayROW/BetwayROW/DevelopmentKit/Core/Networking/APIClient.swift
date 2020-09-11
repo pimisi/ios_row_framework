@@ -99,6 +99,20 @@ class APIClient: APIClientProtocol {
         }.resume()
     }
     
+    fileprivate func object(for data: Data?, returnAsData: Bool) -> Any? {
+        var result: Any?
+        
+        if let array = data?.array, !returnAsData {
+            result = array
+        } else if let dictionary = data?.dictionary, !returnAsData {
+            result = dictionary
+        } else {
+            result = data
+        }
+        
+        return result
+    }
+    
     /// Gets data by doing a `GET` API call to the provided relative path
     ///
     ///  - parameter dataFrom: The relative path to use for makign the api call. This is a uri and not the full url. The left path of the url will be prepended with the url property value of the instance
@@ -120,14 +134,15 @@ class APIClient: APIClientProtocol {
     ///         }
     ///
     ///  - parameter completion: The completion handle to call when the call is completed.
-    func get(dataFrom relativePath: String?, urlParams params: StringKeyDictionary? = nil, options: APIOption? = nil, callback: @escaping (Any?, Error?, HTTPURLResponse?) -> Void) {
+    func get(dataFrom relativePath: String?, urlParams params: StringKeyDictionary? = nil, options: APIOption? = nil, returnAsData: Bool = true, callback: @escaping (Any?, Error?, HTTPURLResponse?) -> Void) {
         
         var mutableOptions = options ?? APIOption()
         mutableOptions.method = .get
         mutableOptions.expectedStatusCode = mutableOptions.expectedStatusCode ?? 200
         
         dataTask(forRelativePath: relativePath, options: mutableOptions, urlParams: params) { data, error, response in
-            callback(data, error, response)
+            
+            callback(self.object(for: data, returnAsData: returnAsData), error, response)
         }
     }
     
@@ -152,7 +167,7 @@ class APIClient: APIClientProtocol {
     ///         }
     ///
     /// - parameter completion: The completion handle to call when the call is completed.
-    func post(data json: GenericDictionary?, to relativePath: String?, options: APIOption? = nil, callback: @escaping (AnyObject?, Error?, HTTPURLResponse?) -> ()) {
+    func post(data json: GenericDictionary?, to relativePath: String?, options: APIOption? = nil, returnAsData: Bool = true, callback: @escaping (Any?, Error?, HTTPURLResponse?) -> ()) {
         
         var mutableOptions = options ?? APIOption()
         mutableOptions.method = .post
@@ -166,17 +181,7 @@ class APIClient: APIClientProtocol {
         
         dataTask(forRelativePath: relativePath, options: mutableOptions, payload: payload) { data, error, response in
             
-            var result: AnyObject?
-            
-            if let array = data?.array {
-                result = array as AnyObject
-            } else if let dictionary = data?.dictionary {
-                result = dictionary as AnyObject
-            } else {
-                result = data as AnyObject?
-            }
-            
-            callback(result, error, response)
+            callback(self.object(for: data, returnAsData: returnAsData), error, response)
         }
         
     }

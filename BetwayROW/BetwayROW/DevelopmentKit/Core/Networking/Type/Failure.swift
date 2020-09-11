@@ -14,11 +14,11 @@ struct Failure: Error {
     let title: String?
     let error: FailureType?
     
-    init(error: Error?, title: String? = nil, message: AnyObject? = nil) {
+    init(error: Error?, title: String? = nil, message: AnyObject? = nil, responseStatusCode: Int? = 1) {
         if let error = error as? APIError {
             self.error = error
         } else {
-            self.error = FailureReason(error: error)
+            self.error = FailureReason(error: error, responseStatusCode: responseStatusCode)
         }
         
         self.title = title
