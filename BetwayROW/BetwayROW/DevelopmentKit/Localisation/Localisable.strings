@@ -1,0 +1,9 @@
+
+// Authentication
+"LOGIN" = "Login";
+"LOG_IN" = "Log In";
+"SIGN_UP" = "Sign Up";
+"SHOW" = "Show";
+"REGISTER" = "Register";
+"FORGOT_PASSWORD" = "Forgot password?";
+

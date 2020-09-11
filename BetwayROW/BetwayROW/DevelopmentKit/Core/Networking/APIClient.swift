@@ -159,8 +159,7 @@ class APIClient: APIClientProtocol {
         mutableOptions.httpHeaders = [
             APIHeaders.Key.productID: "",
             APIHeaders.Key.regionCode: APIHeaders.Value.regionCode,
-            APIHeaders.Key.referer: APIHeaders.Value.referer,
-            ].merging(mutableOptions.httpHeaders ?? [:]) { $1 }
+            APIHeaders.Key.referer: APIHeaders.Value.referer].merging(mutableOptions.httpHeaders ?? [:]) { $1 }
 
         let payload = json?.data
 

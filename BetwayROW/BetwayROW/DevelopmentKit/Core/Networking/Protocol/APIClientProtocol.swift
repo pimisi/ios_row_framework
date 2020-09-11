@@ -16,5 +16,5 @@ protocol APIClientProtocol {
     
     func get(dataFrom relativePath: String?, urlParams params: StringKeyDictionary?, options: APIOption?, callback: @escaping (Any?, Error?, HTTPURLResponse?) -> Void)
     
-    func post(data json: GenericDictionary?, to relativePath: String?, options: APIOption?, callback: @escaping (AnyObject?, Error?, HTTPURLResponse?) -> ())
+    func post(data json: GenericDictionary?, to relativePath: String?, options: APIOption?, callback: @escaping (AnyObject?, Error?, HTTPURLResponse?) -> Void)
 }

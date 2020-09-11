@@ -24,6 +24,11 @@
                                 <inset key="imageInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </barButtonItem>
                         </leftBarButtonItems>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="ic-betslip" id="K9K-Ye-4eD"/>
+                            <barButtonItem image="ic-search" id="zma-xa-tAR"/>
+                            <barButtonItem title="Login" width="62" id="D3A-Zf-clC"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFf-3a-fqp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -51,6 +56,8 @@
     </scenes>
     <resources>
         <image name="betway-logo" width="67.5" height="19"/>
+        <image name="ic-betslip" width="14.5" height="18"/>
         <image name="ic-menu" width="20.5" height="16.5"/>
+        <image name="ic-search" width="14.5" height="14.5"/>
     </resources>
 </document>

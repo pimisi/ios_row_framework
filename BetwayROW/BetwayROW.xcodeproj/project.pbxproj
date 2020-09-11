@@ -10,6 +10,13 @@
 		3DB2BE661AE745ECF3CF4859 /* Pods_BetwayROWUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DB31194D44BC4B543CD408 /* Pods_BetwayROWUITests.framework */; };
 		B1B2A8732B052625B4EB4BFD /* Pods_BetwayROW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE9316158316474758E06F2 /* Pods_BetwayROW.framework */; };
 		C0C03657B9EA417B62230AB6 /* Pods_BetwayROWTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F089FCEC3E8186CC982D78 /* Pods_BetwayROWTests.framework */; };
+		CE7BFEA0250BA075009CDCDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BFE9F250BA075009CDCDF /* LoginViewController.swift */; };
+		CE7BFEA3250BA0B3009CDCDF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BFEA2250BA0B3009CDCDF /* LoginViewModel.swift */; };
+		CE7BFEA8250BA3B8009CDCDF /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BFEA7250BA3B8009CDCDF /* Colours.swift */; };
+		CE7BFEAA250BA41E009CDCDF /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BFEA9250BA41E009CDCDF /* PrimaryButton.swift */; };
+		CE7BFEAD250BA486009CDCDF /* Localisable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE7BFEAC250BA486009CDCDF /* Localisable.strings */; };
+		CE7BFEAF250BA6B6009CDCDF /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BFEAE250BA6B6009CDCDF /* InputTextField.swift */; };
+		CE7BFEB1250BA80E009CDCDF /* LocalisedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BFEB0250BA80E009CDCDF /* LocalisedString.swift */; };
 		D8D96E91250A4A4800B0F26B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D96E90250A4A4800B0F26B /* AppDelegate.swift */; };
 		D8D96E93250A4A4800B0F26B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D96E92250A4A4800B0F26B /* SceneDelegate.swift */; };
 		D8D96E97250A4A4C00B0F26B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8D96E96250A4A4C00B0F26B /* Assets.xcassets */; };
@@ -69,6 +76,13 @@
 		9A1500DBC99F75CCA021A225 /* Pods-BetwayROW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetwayROW.debug.xcconfig"; path = "Target Support Files/Pods-BetwayROW/Pods-BetwayROW.debug.xcconfig"; sourceTree = "<group>"; };
 		A0F089FCEC3E8186CC982D78 /* Pods_BetwayROWTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetwayROWTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8DB31194D44BC4B543CD408 /* Pods_BetwayROWUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetwayROWUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7BFE9F250BA075009CDCDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Authentication/Login/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
+		CE7BFEA2250BA0B3009CDCDF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = Authentication/Login/LoginViewModel.swift; sourceTree = SOURCE_ROOT; };
+		CE7BFEA7250BA3B8009CDCDF /* Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
+		CE7BFEA9250BA41E009CDCDF /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		CE7BFEAC250BA486009CDCDF /* Localisable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localisable.strings; sourceTree = "<group>"; };
+		CE7BFEAE250BA6B6009CDCDF /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
+		CE7BFEB0250BA80E009CDCDF /* LocalisedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalisedString.swift; sourceTree = "<group>"; };
 		D8D96E8D250A4A4800B0F26B /* BetwayROW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetwayROW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D96E90250A4A4800B0F26B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		D8D96E92250A4A4800B0F26B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = ../SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,8 +179,45 @@
 		CE7BFE9A250B8C90009CDCDF /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				CE7BFE9F250BA075009CDCDF /* LoginViewController.swift */,
+				CE7BFEA2250BA0B3009CDCDF /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		CE7BFEA4250BA37B009CDCDF /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BFEA6250BA391009CDCDF /* Colours */,
+				CE7BFEA5250BA38D009CDCDF /* Component */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		CE7BFEA5250BA38D009CDCDF /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BFEA9250BA41E009CDCDF /* PrimaryButton.swift */,
+				CE7BFEAE250BA6B6009CDCDF /* InputTextField.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		CE7BFEA6250BA391009CDCDF /* Colours */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BFEA7250BA3B8009CDCDF /* Colours.swift */,
+			);
+			path = Colours;
+			sourceTree = "<group>";
+		};
+		CE7BFEAB250BA473009CDCDF /* Localisation */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BFEAC250BA486009CDCDF /* Localisable.strings */,
+				CE7BFEB0250BA80E009CDCDF /* LocalisedString.swift */,
+			);
+			path = Localisation;
 			sourceTree = "<group>";
 		};
 		D8D96E84250A4A4800B0F26B = {
@@ -257,6 +308,8 @@
 		D8D96EC3250A4F3200B0F26B /* DevelopmentKit */ = {
 			isa = PBXGroup;
 			children = (
+				CE7BFEAB250BA473009CDCDF /* Localisation */,
+				CE7BFEA4250BA37B009CDCDF /* UIKit */,
 				D8D96EC4250A4F3200B0F26B /* Core */,
 			);
 			path = DevelopmentKit;
@@ -520,6 +573,7 @@
 				D8D96F09250A828200B0F26B /* LaunchScreen.storyboard in Resources */,
 				D8D96E97250A4A4C00B0F26B /* Assets.xcassets in Resources */,
 				D8D96EFF250A517900B0F26B /* Main.storyboard in Resources */,
+				CE7BFEAD250BA486009CDCDF /* Localisable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,16 +685,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7BFEA0250BA075009CDCDF /* LoginViewController.swift in Sources */,
 				D8D96E91250A4A4800B0F26B /* AppDelegate.swift in Sources */,
 				D8D96F02250A524500B0F26B /* MainViewController.swift in Sources */,
 				D8D96EE9250A4F3300B0F26B /* URLRequest+Extension.swift in Sources */,
+				CE7BFEA8250BA3B8009CDCDF /* Colours.swift in Sources */,
 				D8D96EEF250A4F3300B0F26B /* Failure.swift in Sources */,
+				CE7BFEAF250BA6B6009CDCDF /* InputTextField.swift in Sources */,
 				D8D96EE8250A4F3300B0F26B /* String+Extension.swift in Sources */,
 				D8D96E93250A4A4800B0F26B /* SceneDelegate.swift in Sources */,
 				D8D96EF9250A4F3300B0F26B /* UIMessage.swift in Sources */,
 				D8D96EE6250A4F3300B0F26B /* URLSessionConfiguration+Extension.swift in Sources */,
 				D8D96EED250A4F3300B0F26B /* APIClientProtocol.swift in Sources */,
 				D8D96EEE250A4F3300B0F26B /* FailureType.swift in Sources */,
+				CE7BFEAA250BA41E009CDCDF /* PrimaryButton.swift in Sources */,
 				D8D96EF0250A4F3300B0F26B /* HTTPMethod.swift in Sources */,
 				D8D96EEC250A4F3300B0F26B /* APIClient.swift in Sources */,
 				D8D96EF5250A4F3300B0F26B /* DebugLog.swift in Sources */,
@@ -650,6 +708,8 @@
 				D8D96EF6250A4F3300B0F26B /* Alias.swift in Sources */,
 				D8D96EEB250A4F3300B0F26B /* Data+Extension.swift in Sources */,
 				D8D96EF2250A4F3300B0F26B /* APIOption.swift in Sources */,
+				CE7BFEB1250BA80E009CDCDF /* LocalisedString.swift in Sources */,
+				CE7BFEA3250BA0B3009CDCDF /* LoginViewModel.swift in Sources */,
 				D8D96EE7250A4F3300B0F26B /* Error+Extension.swift in Sources */,
 				D8D96EF8250A4F3300B0F26B /* Message.swift in Sources */,
 				D8D96EFA250A4F3300B0F26B /* API.swift in Sources */,
