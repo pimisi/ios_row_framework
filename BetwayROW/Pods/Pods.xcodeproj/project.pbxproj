@@ -1,0 +1,878 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = SwiftLint;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		07825A6A3412C81656C1FDB7739FC225 /* Pods-BetwayROWTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ED1114B7292DB96E9C17CD827E1E861 /* Pods-BetwayROWTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		271B96FA163394B5E9580B93A48A5637 /* Pods-BetwayROWTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 483C2C43F70C4852EDB1BCF28F668CDA /* Pods-BetwayROWTests-dummy.m */; };
+		38A060B4E3B48FD313107684C07C1467 /* Pods-BetwayROW-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8931F5C974FCBB916BDC68EBA2B0FCE0 /* Pods-BetwayROW-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		44462225BF5225A3B742BBF328440F0C /* Pods-BetwayROW-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CD66EBD16C79B91A2B9A48AAFDC01C /* Pods-BetwayROW-dummy.m */; };
+		55812D95D478C6E2471F29B0F3C990D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		5D2A2F606C39C455B7051AB02E6B0E05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		9DD2F04CB929BD50D2B8A22DE93B2423 /* Pods-BetwayROWUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A911762E73D061018AE9C99067BE12F /* Pods-BetwayROWUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE9F481F1B90E9F172DF1020640243AE /* Pods-BetwayROWUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC8F20C48BC82EDBEF49242CDA25FBE /* Pods-BetwayROWUITests-dummy.m */; };
+		FA397477F6586AB5066E5B96C48FC4C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1964CE61B601D57D32B45151FC7DE13B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4C2F2AB8B1E5D02567775AC819A22BA;
+			remoteInfo = "Pods-BetwayROW";
+		};
+		44D45450FBD6025EA2B4702C4E5B13AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4C2F2AB8B1E5D02567775AC819A22BA;
+			remoteInfo = "Pods-BetwayROW";
+		};
+		98708CA8155F7CEC91C1F3FB490DD787 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
+			remoteInfo = SwiftLint;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		15C7F4672E7F6BCB9DC6DD3361A1F4B5 /* Pods-BetwayROW.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BetwayROW.modulemap"; sourceTree = "<group>"; };
+		24F9452A270BF38D804E225A943D1CB5 /* Pods-BetwayROWTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BetwayROWTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		350850440B6E5CA50BCED6E52A0734F2 /* Pods_BetwayROWUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BetwayROWUITests.framework; path = "Pods-BetwayROWUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C182808DFB0D919BCCE91BA9DBFB35C /* Pods_BetwayROW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BetwayROW.framework; path = "Pods-BetwayROW.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
+		44EB507F40EA89BA9836ED3CBD942083 /* Pods-BetwayROW-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BetwayROW-Info.plist"; sourceTree = "<group>"; };
+		483C2C43F70C4852EDB1BCF28F668CDA /* Pods-BetwayROWTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BetwayROWTests-dummy.m"; sourceTree = "<group>"; };
+		4ED1114B7292DB96E9C17CD827E1E861 /* Pods-BetwayROWTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BetwayROWTests-umbrella.h"; sourceTree = "<group>"; };
+		6814B0FB7EBB183D80214DCFCECA2B22 /* Pods-BetwayROW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BetwayROW.debug.xcconfig"; sourceTree = "<group>"; };
+		682F70F1604AEB41820688916B59ED51 /* Pods-BetwayROW-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BetwayROW-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7C3E852F2E99C0E8AB287107F8A5B364 /* Pods-BetwayROWUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BetwayROWUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7DB420C226C6744F7B12EE096C5AD903 /* Pods-BetwayROWTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BetwayROWTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
+		849DFDD8B6DC098E202867E622281CCE /* Pods-BetwayROWTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BetwayROWTests.release.xcconfig"; sourceTree = "<group>"; };
+		8931F5C974FCBB916BDC68EBA2B0FCE0 /* Pods-BetwayROW-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BetwayROW-umbrella.h"; sourceTree = "<group>"; };
+		8A911762E73D061018AE9C99067BE12F /* Pods-BetwayROWUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BetwayROWUITests-umbrella.h"; sourceTree = "<group>"; };
+		8C499EC2083E6E0E031AA07A0B0964BB /* Pods-BetwayROWUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BetwayROWUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		93F7BE7C679BBAC3B25D23F9920A78C0 /* Pods-BetwayROWUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BetwayROWUITests.release.xcconfig"; sourceTree = "<group>"; };
+		98CA5266DDEF7B1586224311A858CECC /* Pods_BetwayROWTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BetwayROWTests.framework; path = "Pods-BetwayROWTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B7D78A03B10271F380CA2D69A8622C9 /* Pods-BetwayROWTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BetwayROWTests-Info.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A20F7BDD59598F2E0F451BD40EF785E8 /* Pods-BetwayROW-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BetwayROW-acknowledgements.plist"; sourceTree = "<group>"; };
+		A5F30EBAA9AFD0760981C2C2E689993A /* Pods-BetwayROWUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BetwayROWUITests-Info.plist"; sourceTree = "<group>"; };
+		A61CAA1A288612236B9E60A1C79F4E5F /* Pods-BetwayROWUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BetwayROWUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		AC9E4E2A7C7A0CC5587DB13E4A51439D /* Pods-BetwayROWTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BetwayROWTests.modulemap"; sourceTree = "<group>"; };
+		ACC8F20C48BC82EDBEF49242CDA25FBE /* Pods-BetwayROWUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BetwayROWUITests-dummy.m"; sourceTree = "<group>"; };
+		ADEAEAC17E5BE248479178433200A064 /* Pods-BetwayROW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BetwayROW.release.xcconfig"; sourceTree = "<group>"; };
+		B3B81DA694FA55427E29D61925FA96B0 /* Pods-BetwayROWTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BetwayROWTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BCBAB99CE5524E2D021F6ACD2F9F43D7 /* Pods-BetwayROWUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BetwayROWUITests.modulemap"; sourceTree = "<group>"; };
+		E9CD66EBD16C79B91A2B9A48AAFDC01C /* Pods-BetwayROW-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BetwayROW-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A2C04F591663BF729AED0D4592A7913 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55812D95D478C6E2471F29B0F3C990D9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9D803996F3ABE9EDA6D3B5E7A7F51ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D2A2F606C39C455B7051AB02E6B0E05 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBEFBE59854FC72454A571A6A7B38930 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA397477F6586AB5066E5B96C48FC4C6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		436EDE87F25E63E5760AABCEBB017BB4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C182808DFB0D919BCCE91BA9DBFB35C /* Pods_BetwayROW.framework */,
+				98CA5266DDEF7B1586224311A858CECC /* Pods_BetwayROWTests.framework */,
+				350850440B6E5CA50BCED6E52A0734F2 /* Pods_BetwayROWUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5664ED654538351334F75E9CF86BA84E /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A8069F928CC0EB19F5F751BEB375B4F5 /* Pods-BetwayROW */,
+				ECE8CE317076BC31A97A02136D9A18EA /* Pods-BetwayROWTests */,
+				B51BB4F24CA4DEE8B7CD8CD37EAA94AC /* Pods-BetwayROWUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7FDA596DBE0337ACDFE55A210D54EF26 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */,
+				7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftLint";
+			sourceTree = "<group>";
+		};
+		965877409E01FB3D85D85E90E6B30185 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D96179D43A67C5D5323B0682D32C133C /* SwiftLint */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A8069F928CC0EB19F5F751BEB375B4F5 /* Pods-BetwayROW */ = {
+			isa = PBXGroup;
+			children = (
+				15C7F4672E7F6BCB9DC6DD3361A1F4B5 /* Pods-BetwayROW.modulemap */,
+				682F70F1604AEB41820688916B59ED51 /* Pods-BetwayROW-acknowledgements.markdown */,
+				A20F7BDD59598F2E0F451BD40EF785E8 /* Pods-BetwayROW-acknowledgements.plist */,
+				E9CD66EBD16C79B91A2B9A48AAFDC01C /* Pods-BetwayROW-dummy.m */,
+				44EB507F40EA89BA9836ED3CBD942083 /* Pods-BetwayROW-Info.plist */,
+				8931F5C974FCBB916BDC68EBA2B0FCE0 /* Pods-BetwayROW-umbrella.h */,
+				6814B0FB7EBB183D80214DCFCECA2B22 /* Pods-BetwayROW.debug.xcconfig */,
+				ADEAEAC17E5BE248479178433200A064 /* Pods-BetwayROW.release.xcconfig */,
+			);
+			name = "Pods-BetwayROW";
+			path = "Target Support Files/Pods-BetwayROW";
+			sourceTree = "<group>";
+		};
+		B51BB4F24CA4DEE8B7CD8CD37EAA94AC /* Pods-BetwayROWUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BCBAB99CE5524E2D021F6ACD2F9F43D7 /* Pods-BetwayROWUITests.modulemap */,
+				8C499EC2083E6E0E031AA07A0B0964BB /* Pods-BetwayROWUITests-acknowledgements.markdown */,
+				A61CAA1A288612236B9E60A1C79F4E5F /* Pods-BetwayROWUITests-acknowledgements.plist */,
+				ACC8F20C48BC82EDBEF49242CDA25FBE /* Pods-BetwayROWUITests-dummy.m */,
+				A5F30EBAA9AFD0760981C2C2E689993A /* Pods-BetwayROWUITests-Info.plist */,
+				8A911762E73D061018AE9C99067BE12F /* Pods-BetwayROWUITests-umbrella.h */,
+				7C3E852F2E99C0E8AB287107F8A5B364 /* Pods-BetwayROWUITests.debug.xcconfig */,
+				93F7BE7C679BBAC3B25D23F9920A78C0 /* Pods-BetwayROWUITests.release.xcconfig */,
+			);
+			name = "Pods-BetwayROWUITests";
+			path = "Target Support Files/Pods-BetwayROWUITests";
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				965877409E01FB3D85D85E90E6B30185 /* Pods */,
+				436EDE87F25E63E5760AABCEBB017BB4 /* Products */,
+				5664ED654538351334F75E9CF86BA84E /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D96179D43A67C5D5323B0682D32C133C /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+				7FDA596DBE0337ACDFE55A210D54EF26 /* Support Files */,
+			);
+			name = SwiftLint;
+			path = SwiftLint;
+			sourceTree = "<group>";
+		};
+		ECE8CE317076BC31A97A02136D9A18EA /* Pods-BetwayROWTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC9E4E2A7C7A0CC5587DB13E4A51439D /* Pods-BetwayROWTests.modulemap */,
+				B3B81DA694FA55427E29D61925FA96B0 /* Pods-BetwayROWTests-acknowledgements.markdown */,
+				7DB420C226C6744F7B12EE096C5AD903 /* Pods-BetwayROWTests-acknowledgements.plist */,
+				483C2C43F70C4852EDB1BCF28F668CDA /* Pods-BetwayROWTests-dummy.m */,
+				9B7D78A03B10271F380CA2D69A8622C9 /* Pods-BetwayROWTests-Info.plist */,
+				4ED1114B7292DB96E9C17CD827E1E861 /* Pods-BetwayROWTests-umbrella.h */,
+				24F9452A270BF38D804E225A943D1CB5 /* Pods-BetwayROWTests.debug.xcconfig */,
+				849DFDD8B6DC098E202867E622281CCE /* Pods-BetwayROWTests.release.xcconfig */,
+			);
+			name = "Pods-BetwayROWTests";
+			path = "Target Support Files/Pods-BetwayROWTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5DCFA11AAA8A460CBF15393EDDF06FF6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DD2F04CB929BD50D2B8A22DE93B2423 /* Pods-BetwayROWUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88D9681D55E669C35E08ED2F9ED68108 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07825A6A3412C81656C1FDB7739FC225 /* Pods-BetwayROWTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92C51C6D7813A90C90F5F8432EEC2359 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38A060B4E3B48FD313107684C07C1467 /* Pods-BetwayROW-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1EEEC5D35CF2B036430F061BD2631484 /* Pods-BetwayROWUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 045B46001573A3D6C2FEC9C447E61317 /* Build configuration list for PBXNativeTarget "Pods-BetwayROWUITests" */;
+			buildPhases = (
+				5DCFA11AAA8A460CBF15393EDDF06FF6 /* Headers */,
+				C17A8B739F119DAFE59F10BF3D688F21 /* Sources */,
+				A9D803996F3ABE9EDA6D3B5E7A7F51ED /* Frameworks */,
+				FEAD0187AE4416D39633558C7CEE2FC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				62BE2DE6BB0A293B7057310A95987773 /* PBXTargetDependency */,
+			);
+			name = "Pods-BetwayROWUITests";
+			productName = "Pods-BetwayROWUITests";
+			productReference = 350850440B6E5CA50BCED6E52A0734F2 /* Pods_BetwayROWUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		52B74E45E60B373CE6EA9852D1CA6116 /* Pods-BetwayROWTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA014CA96E4F74C22F5A5546EFCC7926 /* Build configuration list for PBXNativeTarget "Pods-BetwayROWTests" */;
+			buildPhases = (
+				88D9681D55E669C35E08ED2F9ED68108 /* Headers */,
+				0613007544D964CFBF33B46CCA29DE4F /* Sources */,
+				9A2C04F591663BF729AED0D4592A7913 /* Frameworks */,
+				B3850AA6E15E2BE91656C092869862E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA95DAA0F5C02771C121D1DB80907922 /* PBXTargetDependency */,
+			);
+			name = "Pods-BetwayROWTests";
+			productName = "Pods-BetwayROWTests";
+			productReference = 98CA5266DDEF7B1586224311A858CECC /* Pods_BetwayROWTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D4C2F2AB8B1E5D02567775AC819A22BA /* Pods-BetwayROW */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1ADF07E65F61B378890BE7282FF1D2DD /* Build configuration list for PBXNativeTarget "Pods-BetwayROW" */;
+			buildPhases = (
+				92C51C6D7813A90C90F5F8432EEC2359 /* Headers */,
+				7D9E658064E15CC715382447936FEAF3 /* Sources */,
+				BBEFBE59854FC72454A571A6A7B38930 /* Frameworks */,
+				BB5B9574BD81B5D61E4234A16D454CB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				984EB32D01E191C0CF67D60990B5A171 /* PBXTargetDependency */,
+			);
+			name = "Pods-BetwayROW";
+			productName = "Pods-BetwayROW";
+			productReference = 3C182808DFB0D919BCCE91BA9DBFB35C /* Pods_BetwayROW.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 436EDE87F25E63E5760AABCEBB017BB4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D4C2F2AB8B1E5D02567775AC819A22BA /* Pods-BetwayROW */,
+				52B74E45E60B373CE6EA9852D1CA6116 /* Pods-BetwayROWTests */,
+				1EEEC5D35CF2B036430F061BD2631484 /* Pods-BetwayROWUITests */,
+				52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B3850AA6E15E2BE91656C092869862E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB5B9574BD81B5D61E4234A16D454CB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEAD0187AE4416D39633558C7CEE2FC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0613007544D964CFBF33B46CCA29DE4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				271B96FA163394B5E9580B93A48A5637 /* Pods-BetwayROWTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D9E658064E15CC715382447936FEAF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44462225BF5225A3B742BBF328440F0C /* Pods-BetwayROW-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C17A8B739F119DAFE59F10BF3D688F21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE9F481F1B90E9F172DF1020640243AE /* Pods-BetwayROWUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		62BE2DE6BB0A293B7057310A95987773 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-BetwayROW";
+			target = D4C2F2AB8B1E5D02567775AC819A22BA /* Pods-BetwayROW */;
+			targetProxy = 1964CE61B601D57D32B45151FC7DE13B /* PBXContainerItemProxy */;
+		};
+		984EB32D01E191C0CF67D60990B5A171 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftLint;
+			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
+			targetProxy = 98708CA8155F7CEC91C1F3FB490DD787 /* PBXContainerItemProxy */;
+		};
+		CA95DAA0F5C02771C121D1DB80907922 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-BetwayROW";
+			target = D4C2F2AB8B1E5D02567775AC819A22BA /* Pods-BetwayROW */;
+			targetProxy = 44D45450FBD6025EA2B4702C4E5B13AC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0BDEE34FB36BBA141A18BC2A455A3DD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C3E852F2E99C0E8AB287107F8A5B364 /* Pods-BetwayROWUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BetwayROWUITests/Pods-BetwayROWUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BetwayROWUITests/Pods-BetwayROWUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0BFD8A0CDB74B937830D0984F3972AFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93F7BE7C679BBAC3B25D23F9920A78C0 /* Pods-BetwayROWUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BetwayROWUITests/Pods-BetwayROWUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BetwayROWUITests/Pods-BetwayROWUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		131356BE54884448CA49C07BEDF4BB2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		395A38D99C5AA1329D32C0B46AB30EE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6814B0FB7EBB183D80214DCFCECA2B22 /* Pods-BetwayROW.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BetwayROW/Pods-BetwayROW-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BetwayROW/Pods-BetwayROW.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		46EECD2DED30D7C5FE141C0B267C2D3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		55DD740115BE746C8DBB7753806D85D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C04D2317C84261660A9929CEA5AD3FD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 849DFDD8B6DC098E202867E622281CCE /* Pods-BetwayROWTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BetwayROWTests/Pods-BetwayROWTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BetwayROWTests/Pods-BetwayROWTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DE80661E8801E7B2AD5D5DFF1389140E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24F9452A270BF38D804E225A943D1CB5 /* Pods-BetwayROWTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BetwayROWTests/Pods-BetwayROWTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BetwayROWTests/Pods-BetwayROWTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F090CD07A80273D5A73C8EA19224ADDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		FAFD72F86BCD0A1259176F7503AC37A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADEAEAC17E5BE248479178433200A064 /* Pods-BetwayROW.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BetwayROW/Pods-BetwayROW-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BetwayROW/Pods-BetwayROW.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		045B46001573A3D6C2FEC9C447E61317 /* Build configuration list for PBXNativeTarget "Pods-BetwayROWUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BDEE34FB36BBA141A18BC2A455A3DD7 /* Debug */,
+				0BFD8A0CDB74B937830D0984F3972AFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1ADF07E65F61B378890BE7282FF1D2DD /* Build configuration list for PBXNativeTarget "Pods-BetwayROW" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				395A38D99C5AA1329D32C0B46AB30EE5 /* Debug */,
+				FAFD72F86BCD0A1259176F7503AC37A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				131356BE54884448CA49C07BEDF4BB2A /* Debug */,
+				F090CD07A80273D5A73C8EA19224ADDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46EECD2DED30D7C5FE141C0B267C2D3F /* Debug */,
+				55DD740115BE746C8DBB7753806D85D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA014CA96E4F74C22F5A5546EFCC7926 /* Build configuration list for PBXNativeTarget "Pods-BetwayROWTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE80661E8801E7B2AD5D5DFF1389140E /* Debug */,
+				C04D2317C84261660A9929CEA5AD3FD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

@@ -16,6 +16,7 @@ disabled_rules: # rule identifiers to exclude from running
   - large_tuple
   - type_name
   - members_naming_id
+  - nesting
 opt_in_rules: # some rules are only opt-in
   - empty_count
   - implicitly_unwrapped_optional

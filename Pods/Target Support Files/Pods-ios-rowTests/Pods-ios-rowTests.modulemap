@@ -1,6 +1,0 @@
-framework module Pods_ios_rowTests {
-  umbrella header "Pods-ios-rowTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
