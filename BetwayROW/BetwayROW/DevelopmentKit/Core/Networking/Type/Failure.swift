@@ -10,7 +10,7 @@ import Foundation
 
 struct Failure: Error {
     private var message: Any?
-    
+
     let title: String?
     let error: FailureType?
     
@@ -20,11 +20,11 @@ struct Failure: Error {
         } else {
             self.error = FailureReason(error: error)
         }
-        
+
         self.title = title
         self.message = message ?? self.error?.message
     }
-    
+
     var description: String {
         if let messageObject = message as? [[String: Any]], let key = messageObject.first?.keys.first, key.lowercased() == "message", let message = messageObject.first?[key] as? String {
             return message
@@ -34,7 +34,7 @@ struct Failure: Error {
             return error?.message ?? FailureReason.unknown.message ?? "unknown"
         }
     }
-    
+
     var code: Int {
         return error?.code ?? 1
     }

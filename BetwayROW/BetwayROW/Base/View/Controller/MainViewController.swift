@@ -17,9 +17,9 @@ class MainViewController: UIViewController {
     override var prefersHomeIndicatorAutoHidden: Bool {
         return false
     }
-    
-    override var prefersStatusBarHidden : Bool {
-        return true
+
+    override var prefersStatusBarHidden: Bool {
+        return false
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -27,6 +27,6 @@ class MainViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()     
     }
 }
