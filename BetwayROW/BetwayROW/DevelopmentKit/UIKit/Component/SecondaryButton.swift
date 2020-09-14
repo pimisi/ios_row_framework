@@ -1,15 +1,15 @@
 //
-//  PrimaryButton.swift
+//  SecondaryButton.swift
 //  BetwayROW
 //
-//  Created by Gugulethu Mhlanga on 2020/09/11.
-//  Copyright © 2020 Betway. All rights reserved.
+//  Created by user on 2020/09/14.
+//  Copyright © 2020 Paul Imisi. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-public class PrimaryButton: UIButton {
+public class SecondaryButton: UIButton {
     
     required override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,11 +31,12 @@ public class PrimaryButton: UIButton {
     }
     
     public func setupLayout() {
-        
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 2.0
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: UIFont.Weight.bold)
+        self.layer.borderColor = Colours.shared.primary.cgColor
+        self.layer.borderWidth = 1.0
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: UIFont.Weight.regular)
         self.setTitleColor(Colours.shared.white, for: .normal)
-        self.backgroundColor = Colours.shared.primary
+        self.backgroundColor = Colours.shared.white
     }
 }
