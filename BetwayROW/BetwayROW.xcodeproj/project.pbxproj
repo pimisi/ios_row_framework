@@ -10,14 +10,13 @@
 		3DB2BE661AE745ECF3CF4859 /* Pods_BetwayROWUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DB31194D44BC4B543CD408 /* Pods_BetwayROWUITests.framework */; };
 		B1B2A8732B052625B4EB4BFD /* Pods_BetwayROW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE9316158316474758E06F2 /* Pods_BetwayROW.framework */; };
 		C0C03657B9EA417B62230AB6 /* Pods_BetwayROWTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F089FCEC3E8186CC982D78 /* Pods_BetwayROWTests.framework */; };
-		CE7BFEA0250BA075009CDCDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BFE9F250BA075009CDCDF /* LoginViewController.swift */; };
-		CE7BFEA3250BA0B3009CDCDF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BFEA2250BA0B3009CDCDF /* LoginViewModel.swift */; };
+		CE5B4CE0250F911500E7C0B4 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5B4CDB250F911500E7C0B4 /* LoginViewController.xib */; };
+		CE5B4CE2250F911500E7C0B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B4CDF250F911500E7C0B4 /* LoginViewController.swift */; };
 		CE7BFEA8250BA3B8009CDCDF /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BFEA7250BA3B8009CDCDF /* Colours.swift */; };
 		CE7BFEAA250BA41E009CDCDF /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BFEA9250BA41E009CDCDF /* PrimaryButton.swift */; };
 		CE7BFEAD250BA486009CDCDF /* Localisable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE7BFEAC250BA486009CDCDF /* Localisable.strings */; };
 		CE7BFEAF250BA6B6009CDCDF /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BFEAE250BA6B6009CDCDF /* InputTextField.swift */; };
 		CE7BFEB1250BA80E009CDCDF /* LocalisedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BFEB0250BA80E009CDCDF /* LocalisedString.swift */; };
-		CE7BFEB4250BAF79009CDCDF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7BFEB3250BAF79009CDCDF /* LoginViewController.xib */; };
 		D8D96E91250A4A4800B0F26B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D96E90250A4A4800B0F26B /* AppDelegate.swift */; };
 		D8D96E93250A4A4800B0F26B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D96E92250A4A4800B0F26B /* SceneDelegate.swift */; };
 		D8D96E97250A4A4C00B0F26B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8D96E96250A4A4C00B0F26B /* Assets.xcassets */; };
@@ -77,14 +76,13 @@
 		9A1500DBC99F75CCA021A225 /* Pods-BetwayROW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetwayROW.debug.xcconfig"; path = "Target Support Files/Pods-BetwayROW/Pods-BetwayROW.debug.xcconfig"; sourceTree = "<group>"; };
 		A0F089FCEC3E8186CC982D78 /* Pods_BetwayROWTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetwayROWTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8DB31194D44BC4B543CD408 /* Pods_BetwayROWUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetwayROWUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE7BFE9F250BA075009CDCDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Authentication/Login/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
-		CE7BFEA2250BA0B3009CDCDF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = Authentication/Login/LoginViewModel.swift; sourceTree = SOURCE_ROOT; };
+		CE5B4CDB250F911500E7C0B4 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		CE5B4CDF250F911500E7C0B4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE7BFEA7250BA3B8009CDCDF /* Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
 		CE7BFEA9250BA41E009CDCDF /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		CE7BFEAC250BA486009CDCDF /* Localisable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localisable.strings; sourceTree = "<group>"; };
 		CE7BFEAE250BA6B6009CDCDF /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		CE7BFEB0250BA80E009CDCDF /* LocalisedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalisedString.swift; sourceTree = "<group>"; };
-		CE7BFEB3250BAF79009CDCDF /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoginViewController.xib; path = Authentication/Xib/LoginViewController.xib; sourceTree = SOURCE_ROOT; };
 		D8D96E8D250A4A4800B0F26B /* BetwayROW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetwayROW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D96E90250A4A4800B0F26B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		D8D96E92250A4A4800B0F26B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = ../SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,11 +176,35 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		CE7BFE9A250B8C90009CDCDF /* Login */ = {
+		CE5B4CD8250F911500E7C0B4 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				CE7BFE9F250BA075009CDCDF /* LoginViewController.swift */,
-				CE7BFEA2250BA0B3009CDCDF /* LoginViewModel.swift */,
+				CE5B4CD9250F911500E7C0B4 /* Authentication */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		CE5B4CD9250F911500E7C0B4 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				CE5B4CDA250F911500E7C0B4 /* Xib */,
+				CE5B4CDD250F911500E7C0B4 /* Login */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		CE5B4CDA250F911500E7C0B4 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				CE5B4CDB250F911500E7C0B4 /* LoginViewController.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		CE5B4CDD250F911500E7C0B4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CE5B4CDF250F911500E7C0B4 /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -222,14 +244,6 @@
 			path = Localisation;
 			sourceTree = "<group>";
 		};
-		CE7BFEB2250BAF67009CDCDF /* Xib */ = {
-			isa = PBXGroup;
-			children = (
-				CE7BFEB3250BAF79009CDCDF /* LoginViewController.xib */,
-			);
-			path = Xib;
-			sourceTree = "<group>";
-		};
 		D8D96E84250A4A4800B0F26B = {
 			isa = PBXGroup;
 			children = (
@@ -255,9 +269,9 @@
 		D8D96E8F250A4A4800B0F26B /* BetwayROW */ = {
 			isa = PBXGroup;
 			children = (
+				CE5B4CD8250F911500E7C0B4 /* Feature */,
 				D8D96EFB250A514F00B0F26B /* Base */,
 				D8D96EC3250A4F3200B0F26B /* DevelopmentKit */,
-				D8D96EC0250A4F3200B0F26B /* Feature */,
 				D8D96E96250A4A4C00B0F26B /* Assets.xcassets */,
 				D8D96E9E250A4A4C00B0F26B /* Info.plist */,
 				D8D96E98250A4A4C00B0F26B /* Preview Content */,
@@ -289,31 +303,6 @@
 				D8D96EB4250A4A4D00B0F26B /* Info.plist */,
 			);
 			path = BetwayROWUITests;
-			sourceTree = "<group>";
-		};
-		D8D96EC0250A4F3200B0F26B /* Feature */ = {
-			isa = PBXGroup;
-			children = (
-				D8D96EC1250A4F3200B0F26B /* Authentication */,
-			);
-			path = Feature;
-			sourceTree = "<group>";
-		};
-		D8D96EC1250A4F3200B0F26B /* Authentication */ = {
-			isa = PBXGroup;
-			children = (
-				CE7BFEB2250BAF67009CDCDF /* Xib */,
-				CE7BFE9A250B8C90009CDCDF /* Login */,
-				D8D96EC2250A4F3200B0F26B /* Registration */,
-			);
-			path = Authentication;
-			sourceTree = "<group>";
-		};
-		D8D96EC2250A4F3200B0F26B /* Registration */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Registration;
 			sourceTree = "<group>";
 		};
 		D8D96EC3250A4F3200B0F26B /* DevelopmentKit */ = {
@@ -582,7 +571,7 @@
 			files = (
 				D8D96E9A250A4A4C00B0F26B /* Preview Assets.xcassets in Resources */,
 				D8D96F09250A828200B0F26B /* LaunchScreen.storyboard in Resources */,
-				CE7BFEB4250BAF79009CDCDF /* LoginViewController.xib in Resources */,
+				CE5B4CE0250F911500E7C0B4 /* LoginViewController.xib in Resources */,
 				D8D96E97250A4A4C00B0F26B /* Assets.xcassets in Resources */,
 				D8D96EFF250A517900B0F26B /* Main.storyboard in Resources */,
 				CE7BFEAD250BA486009CDCDF /* Localisable.strings in Resources */,
@@ -697,7 +686,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE7BFEA0250BA075009CDCDF /* LoginViewController.swift in Sources */,
 				D8D96E91250A4A4800B0F26B /* AppDelegate.swift in Sources */,
 				D8D96F02250A524500B0F26B /* MainViewController.swift in Sources */,
 				D8D96EE9250A4F3300B0F26B /* URLRequest+Extension.swift in Sources */,
@@ -710,6 +698,7 @@
 				D8D96EE6250A4F3300B0F26B /* URLSessionConfiguration+Extension.swift in Sources */,
 				D8D96EED250A4F3300B0F26B /* APIClientProtocol.swift in Sources */,
 				D8D96EEE250A4F3300B0F26B /* FailureType.swift in Sources */,
+				CE5B4CE2250F911500E7C0B4 /* LoginViewController.swift in Sources */,
 				CE7BFEAA250BA41E009CDCDF /* PrimaryButton.swift in Sources */,
 				D8D96EF0250A4F3300B0F26B /* HTTPMethod.swift in Sources */,
 				D8D96EEC250A4F3300B0F26B /* APIClient.swift in Sources */,
@@ -721,7 +710,6 @@
 				D8D96EEB250A4F3300B0F26B /* Data+Extension.swift in Sources */,
 				D8D96EF2250A4F3300B0F26B /* APIOption.swift in Sources */,
 				CE7BFEB1250BA80E009CDCDF /* LocalisedString.swift in Sources */,
-				CE7BFEA3250BA0B3009CDCDF /* LoginViewModel.swift in Sources */,
 				D8D96EE7250A4F3300B0F26B /* Error+Extension.swift in Sources */,
 				D8D96EF8250A4F3300B0F26B /* Message.swift in Sources */,
 				D8D96EFA250A4F3300B0F26B /* API.swift in Sources */,
