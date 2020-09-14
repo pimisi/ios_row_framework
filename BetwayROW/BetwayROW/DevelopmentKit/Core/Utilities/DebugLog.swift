@@ -11,7 +11,7 @@ import Foundation
 /**
  Used for logging messages while in debug mode
  */
-func debugLog(_ message: String) {
+func debugLog(_ message: Any) {
     #if DEBUG
         print(message)
     #endif

@@ -9,7 +9,9 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
+    @IBOutlet weak var loginBarButton: UIBarButtonItem!
+    
     override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge {
         return UIRectEdge.bottom
     }
@@ -27,6 +29,28 @@ class MainViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()     
+        super.viewDidLoad()
+        configureButton()
     }
+    
+    private func configureButton() {
+        let loginButton = PrimaryButton()
+        loginButton.setTitle(loginButtonTitle, for: .normal)
+        loginButton.contentEdgeInsets = UIEdgeInsets(top: 5.0,
+                                                     left: 10.0,
+                                                     bottom: 5.0,
+                                                     right: 10.0)
+        loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
+        loginBarButton.customView = loginButton
+    }
+    
+    @objc func didTapLogin() {
+        debugLog("Logged In")
+    }
+    
+}
+
+// MARK: Localizable
+extension MainViewController {
+    var loginButtonTitle: String { Localisable.localized(key: "LOGIN")}
 }
