@@ -44,11 +44,10 @@ class MainViewController: UIViewController {
         loginBarButton.customView = loginButton
     }
     
-    @objc func didTapLogin() {
-        let loginViewController = UINavigationController(rootViewController: LoginViewController())
-        self.present(loginViewController,
-                     animated: true,
-                     completion: nil)
+    @objc private func didTapLogin() {
+        let loginNavigationViewController = UINavigationController(rootViewController: LoginViewController())
+        loginNavigationViewController.modalPresentationStyle = .overCurrentContext
+        self.present(loginNavigationViewController, animated: false, completion: nil)
     }
     
 }

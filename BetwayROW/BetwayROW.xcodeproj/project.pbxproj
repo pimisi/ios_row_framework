@@ -11,6 +11,7 @@
 		B1B2A8732B052625B4EB4BFD /* Pods_BetwayROW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE9316158316474758E06F2 /* Pods_BetwayROW.framework */; };
 		C0C03657B9EA417B62230AB6 /* Pods_BetwayROWTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F089FCEC3E8186CC982D78 /* Pods_BetwayROWTests.framework */; };
 		CE47F0C12510DA5700A9F6C2 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47F0C02510DA5700A9F6C2 /* Constraints.swift */; };
+		CE47F0C42510E3CE00A9F6C2 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47F0C32510E3CE00A9F6C2 /* NavigationController.swift */; };
 		CE5B4CE2250F911500E7C0B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B4CDF250F911500E7C0B4 /* LoginViewController.swift */; };
 		CE5C03362510B8E70014F0FF /* LoginViewController + TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C03352510B8E70014F0FF /* LoginViewController + TextFieldExtension.swift */; };
 		CE5C03392510BA830014F0FF /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C03382510BA830014F0FF /* Layout.swift */; };
@@ -80,6 +81,7 @@
 		A0F089FCEC3E8186CC982D78 /* Pods_BetwayROWTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetwayROWTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8DB31194D44BC4B543CD408 /* Pods_BetwayROWUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetwayROWUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE47F0C02510DA5700A9F6C2 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		CE47F0C32510E3CE00A9F6C2 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		CE5B4CDF250F911500E7C0B4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE5C03352510B8E70014F0FF /* LoginViewController + TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController + TextFieldExtension.swift"; sourceTree = "<group>"; };
 		CE5C03382510BA830014F0FF /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
@@ -182,6 +184,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE47F0C22510E3A500A9F6C2 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				CE47F0C32510E3CE00A9F6C2 /* NavigationController.swift */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
 		CE5B4CD8250F911500E7C0B4 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +229,7 @@
 		CE7BFEA4250BA37B009CDCDF /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				CE47F0C22510E3A500A9F6C2 /* NavigationController */,
 				CE5C03372510BA750014F0FF /* Layout */,
 				CE7BFEA6250BA391009CDCDF /* Colours */,
 				CE7BFEA5250BA38D009CDCDF /* Component */,
@@ -707,6 +718,7 @@
 				D8D96EF9250A4F3300B0F26B /* UIMessage.swift in Sources */,
 				D8D96EE6250A4F3300B0F26B /* URLSessionConfiguration+Extension.swift in Sources */,
 				D8D96EED250A4F3300B0F26B /* APIClientProtocol.swift in Sources */,
+				CE47F0C42510E3CE00A9F6C2 /* NavigationController.swift in Sources */,
 				D8D96EEE250A4F3300B0F26B /* FailureType.swift in Sources */,
 				CE5B4CE2250F911500E7C0B4 /* LoginViewController.swift in Sources */,
 				CE7BFEAA250BA41E009CDCDF /* PrimaryButton.swift in Sources */,
