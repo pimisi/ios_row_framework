@@ -27,5 +27,6 @@ public enum Layout {
     static let spacing64: CGFloat = 64
     static let spacing72: CGFloat = 72
     static let spacing80: CGFloat = 80
+    static let spacing250: CGFloat = 250
     static let spacing300: CGFloat = 300
 }

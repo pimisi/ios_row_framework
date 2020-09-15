@@ -40,7 +40,7 @@ import UIKit
     
     public func setupLayout() {
         self.borderStyle = .none
-        self.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.regular)
+        self.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.medium)
         self.textColor = Colours.shared.dark
         self.layer.borderColor = Colours.shared.lightGrey.cgColor
         self.layer.borderWidth = 1.0

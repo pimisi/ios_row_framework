@@ -12,12 +12,14 @@ final class LoginViewController: UIViewController {
     
     lazy var userNameTextField: InputTextField = {
         let textField = InputTextField()
+        textField.delegate = self
         textField.placeholder = userNamePlaceHolderText
         return textField
     }()
     
     lazy var passwordTextField: InputTextField = {
         let textField = InputTextField()
+        textField.delegate = self
         textField.placeholder = passwordPlaceHolderText
         return textField
     }()
@@ -29,8 +31,8 @@ final class LoginViewController: UIViewController {
         return button
     }()
     
-    lazy var registerButton: PrimaryButton = {
-        let button = PrimaryButton()
+    lazy var registerButton: SecondaryButton = {
+        let button = SecondaryButton()
         button.isEnabled = false
         button.setTitle(registerButtonText, for: .normal)
         return button
@@ -38,8 +40,7 @@ final class LoginViewController: UIViewController {
     
     lazy var loginStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [userNameTextField, passwordTextField, loginButton, registerButton])
-        stackView.distribution = .fill
-        stackView.alignment = .center
+        stackView.distribution = .fillEqually
         stackView.axis = .vertical
         stackView.spacing = Layout.spacing16
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -54,10 +55,10 @@ final class LoginViewController: UIViewController {
 
     private func constrainViews() {
         view.addSubview(loginStackView)
-        loginStackView.leftAnchor ->> view.leftAnchor
-        loginStackView.rightAnchor ->> view.rightAnchor
-        loginStackView.topAnchor ->> view.topAnchor
-        loginStackView.height(Layout.spacing300)
+        loginStackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Layout.spacing16).isActive = true
+        loginStackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -Layout.spacing16).isActive = true
+        loginStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: Layout.spacing80).isActive = true
+        loginStackView.height(Layout.spacing250)
     }
 }
 
