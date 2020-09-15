@@ -6,4 +6,6 @@
 "SHOW" = "Show";
 "REGISTER" = "Register";
 "FORGOT_PASSWORD" = "Forgot password?";
+"USER_NAME" = "Username";
+"PASSWORD" = "Password";
 

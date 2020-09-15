@@ -35,8 +35,8 @@ public class SecondaryButton: UIButton {
         self.layer.cornerRadius = 2.0
         self.layer.borderColor = Colours.shared.primary.cgColor
         self.layer.borderWidth = 1.0
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: UIFont.Weight.regular)
-        self.setTitleColor(Colours.shared.white, for: .normal)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .regular)
+        self.setTitleColor(Colours.shared.primary, for: .normal)
         self.backgroundColor = Colours.shared.white
     }
 }

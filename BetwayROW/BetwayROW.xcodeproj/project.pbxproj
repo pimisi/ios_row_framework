@@ -10,9 +10,10 @@
 		3DB2BE661AE745ECF3CF4859 /* Pods_BetwayROWUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DB31194D44BC4B543CD408 /* Pods_BetwayROWUITests.framework */; };
 		B1B2A8732B052625B4EB4BFD /* Pods_BetwayROW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE9316158316474758E06F2 /* Pods_BetwayROW.framework */; };
 		C0C03657B9EA417B62230AB6 /* Pods_BetwayROWTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F089FCEC3E8186CC982D78 /* Pods_BetwayROWTests.framework */; };
-		CE5B4CE0250F911500E7C0B4 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5B4CDB250F911500E7C0B4 /* LoginView.xib */; };
+		CE47F0C12510DA5700A9F6C2 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47F0C02510DA5700A9F6C2 /* Constraints.swift */; };
 		CE5B4CE2250F911500E7C0B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B4CDF250F911500E7C0B4 /* LoginViewController.swift */; };
-		CE5B4CE4250F97E300E7C0B4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B4CE3250F97E300E7C0B4 /* LoginView.swift */; };
+		CE5C03362510B8E70014F0FF /* LoginViewController + TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C03352510B8E70014F0FF /* LoginViewController + TextFieldExtension.swift */; };
+		CE5C03392510BA830014F0FF /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C03382510BA830014F0FF /* Layout.swift */; };
 		CE7BFEA8250BA3B8009CDCDF /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BFEA7250BA3B8009CDCDF /* Colours.swift */; };
 		CE7BFEAA250BA41E009CDCDF /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BFEA9250BA41E009CDCDF /* PrimaryButton.swift */; };
 		CE7BFEAD250BA486009CDCDF /* Localisable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE7BFEAC250BA486009CDCDF /* Localisable.strings */; };
@@ -78,9 +79,10 @@
 		9A1500DBC99F75CCA021A225 /* Pods-BetwayROW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetwayROW.debug.xcconfig"; path = "Target Support Files/Pods-BetwayROW/Pods-BetwayROW.debug.xcconfig"; sourceTree = "<group>"; };
 		A0F089FCEC3E8186CC982D78 /* Pods_BetwayROWTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetwayROWTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8DB31194D44BC4B543CD408 /* Pods_BetwayROWUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetwayROWUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE5B4CDB250F911500E7C0B4 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		CE47F0C02510DA5700A9F6C2 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		CE5B4CDF250F911500E7C0B4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		CE5B4CE3250F97E300E7C0B4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CE5C03352510B8E70014F0FF /* LoginViewController + TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController + TextFieldExtension.swift"; sourceTree = "<group>"; };
+		CE5C03382510BA830014F0FF /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		CE7BFEA7250BA3B8009CDCDF /* Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
 		CE7BFEA9250BA41E009CDCDF /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		CE7BFEAC250BA486009CDCDF /* Localisable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localisable.strings; sourceTree = "<group>"; };
@@ -191,32 +193,33 @@
 		CE5B4CD9250F911500E7C0B4 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				CE5B4CDA250F911500E7C0B4 /* Xib */,
 				CE5B4CDD250F911500E7C0B4 /* Login */,
 			);
 			path = Authentication;
-			sourceTree = "<group>";
-		};
-		CE5B4CDA250F911500E7C0B4 /* Xib */ = {
-			isa = PBXGroup;
-			children = (
-				CE5B4CDB250F911500E7C0B4 /* LoginView.xib */,
-			);
-			path = Xib;
 			sourceTree = "<group>";
 		};
 		CE5B4CDD250F911500E7C0B4 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				CE5B4CDF250F911500E7C0B4 /* LoginViewController.swift */,
-				CE5B4CE3250F97E300E7C0B4 /* LoginView.swift */,
+				CE5C03352510B8E70014F0FF /* LoginViewController + TextFieldExtension.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		CE5C03372510BA750014F0FF /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				CE5C03382510BA830014F0FF /* Layout.swift */,
+				CE47F0C02510DA5700A9F6C2 /* Constraints.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 		CE7BFEA4250BA37B009CDCDF /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				CE5C03372510BA750014F0FF /* Layout */,
 				CE7BFEA6250BA391009CDCDF /* Colours */,
 				CE7BFEA5250BA38D009CDCDF /* Component */,
 			);
@@ -577,7 +580,6 @@
 			files = (
 				D8D96E9A250A4A4C00B0F26B /* Preview Assets.xcassets in Resources */,
 				D8D96F09250A828200B0F26B /* LaunchScreen.storyboard in Resources */,
-				CE5B4CE0250F911500E7C0B4 /* LoginView.xib in Resources */,
 				D8D96E97250A4A4C00B0F26B /* Assets.xcassets in Resources */,
 				D8D96EFF250A517900B0F26B /* Main.storyboard in Resources */,
 				CE7BFEAD250BA486009CDCDF /* Localisable.strings in Resources */,
@@ -700,6 +702,7 @@
 				D8D96EEF250A4F3300B0F26B /* Failure.swift in Sources */,
 				CE7BFEAF250BA6B6009CDCDF /* InputTextField.swift in Sources */,
 				D8D96EE8250A4F3300B0F26B /* String+Extension.swift in Sources */,
+				CE5C03362510B8E70014F0FF /* LoginViewController + TextFieldExtension.swift in Sources */,
 				D8D96E93250A4A4800B0F26B /* SceneDelegate.swift in Sources */,
 				D8D96EF9250A4F3300B0F26B /* UIMessage.swift in Sources */,
 				D8D96EE6250A4F3300B0F26B /* URLSessionConfiguration+Extension.swift in Sources */,
@@ -713,6 +716,7 @@
 				D8D96EEA250A4F3300B0F26B /* Dictionary+Extension.swift in Sources */,
 				D8D96F0B250A839600B0F26B /* LaunchScreenViewController.swift in Sources */,
 				D8D96EE5250A4F3300B0F26B /* UIApplication+Extension.swift in Sources */,
+				CE47F0C12510DA5700A9F6C2 /* Constraints.swift in Sources */,
 				D8D96EF6250A4F3300B0F26B /* Alias.swift in Sources */,
 				D8D96EEB250A4F3300B0F26B /* Data+Extension.swift in Sources */,
 				D8D96EF2250A4F3300B0F26B /* APIOption.swift in Sources */,
@@ -723,7 +727,7 @@
 				D8D96EF1250A4F3300B0F26B /* FailureReason.swift in Sources */,
 				D8D96EF7250A4F3300B0F26B /* Constant.swift in Sources */,
 				D8D96EF4250A4F3300B0F26B /* APIFieldError.swift in Sources */,
-				CE5B4CE4250F97E300E7C0B4 /* LoginView.swift in Sources */,
+				CE5C03392510BA830014F0FF /* Layout.swift in Sources */,
 				D8D96EF3250A4F3300B0F26B /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

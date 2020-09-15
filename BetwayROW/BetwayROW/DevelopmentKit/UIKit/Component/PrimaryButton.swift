@@ -34,7 +34,7 @@ public class PrimaryButton: UIButton {
         
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 2.0
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: UIFont.Weight.bold)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         self.setTitleColor(Colours.shared.white, for: .normal)
         self.backgroundColor = Colours.shared.primary
     }

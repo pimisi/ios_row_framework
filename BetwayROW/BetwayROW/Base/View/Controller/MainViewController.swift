@@ -36,16 +36,19 @@ class MainViewController: UIViewController {
     private func configureButton() {
         let loginButton = PrimaryButton()
         loginButton.setTitle(loginButtonTitle, for: .normal)
-        loginButton.contentEdgeInsets = UIEdgeInsets(top: 5.0,
-                                                     left: 10.0,
-                                                     bottom: 5.0,
-                                                     right: 10.0)
+        loginButton.contentEdgeInsets = UIEdgeInsets(top: Layout.spacing4,
+                                                     left: Layout.spacing10,
+                                                     bottom: Layout.spacing4,
+                                                     right: Layout.spacing10)
         loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
         loginBarButton.customView = loginButton
     }
     
     @objc func didTapLogin() {
-        debugLog("Logged In")
+        let loginViewController = UINavigationController(rootViewController: LoginViewController())
+        self.present(loginViewController,
+                     animated: true,
+                     completion: nil)
     }
     
 }

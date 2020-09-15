@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable public class BrandTextField: UITextField {
+@IBDesignable public class InputTextField: UITextField {
     
     required override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,7 +42,7 @@ import UIKit
         self.borderStyle = .none
         self.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.regular)
         self.textColor = Colours.shared.dark
-        self.layer.borderColor = Colours.shared.grey.cgColor
+        self.layer.borderColor = Colours.shared.lightGrey.cgColor
         self.layer.borderWidth = 1.0
         self.backgroundColor = Colours.shared.white
         guard let placeholderText: String = self.placeholder else {
