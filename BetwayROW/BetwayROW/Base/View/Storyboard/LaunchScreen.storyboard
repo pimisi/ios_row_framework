@@ -7,16 +7,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Launch Screen View Controller-->
+        <!--View Controller-->
         <scene sceneID="mzs-1f-Hk1">
             <objects>
-                <viewController id="aoM-hr-Mwr" customClass="LaunchScreenViewController" customModule="BetwayROW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aoM-hr-Mwr" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ufJ-8y-B9h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LNK-5W-lfH">
-                                <rect key="frame" x="77" y="370.5" width="260" height="155"/>
+                                <rect key="frame" x="77" y="394" width="260" height="108"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="betway-white" translatesAutoresizingMaskIntoConstraints="NO" id="TT5-bt-euT">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="108"/>
@@ -25,9 +25,6 @@
                                             <constraint firstAttribute="width" constant="260" id="Uqd-IG-maF"/>
                                         </constraints>
                                     </imageView>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="qYA-nv-5DW">
-                                        <rect key="frame" x="111.5" y="118" width="37" height="37"/>
-                                    </activityIndicatorView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -38,9 +35,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VUu-uo-ypy"/>
                     </view>
-                    <connections>
-                        <outlet property="loadingActivityIndicator" destination="qYA-nv-5DW" id="wgj-QJ-YBm"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K07-gA-Bua" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -12,7 +12,9 @@ protocol APIClientProtocol {
     var options: APIOption { get }
     var defaultHeaders: HashableKeyDictionary { get }
     
-    static func client(withURL url: String) -> APIClientProtocol?
+    static func client(withURL url: String?) -> APIClientProtocol
+    
+    func setBaseURL(withString urlString: String)
     
     func get(dataFrom relativePath: String?, urlParams params: StringKeyDictionary?, options: APIOption?, returnAsData: Bool, callback: @escaping (Any?, Error?, HTTPURLResponse?) -> Void)
     

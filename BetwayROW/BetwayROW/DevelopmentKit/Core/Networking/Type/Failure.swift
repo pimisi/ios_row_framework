@@ -14,7 +14,7 @@ struct Failure: Error {
     let title: String?
     let error: FailureType?
     
-    init(error: Error?, title: String? = nil, message: AnyObject? = nil, responseStatusCode: Int? = 1) {
+    init(error: Error?, title: String? = nil, message: Any? = nil, responseStatusCode: Int? = 1) {
         if let error = error as? APIError {
             self.error = error
         } else {

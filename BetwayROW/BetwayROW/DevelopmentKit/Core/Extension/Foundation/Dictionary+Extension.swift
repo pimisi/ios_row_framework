@@ -48,7 +48,11 @@ extension Dictionary where Key == String {
         return object(forKey: key) as? Int ?? `default`
     }
     
-    func string(forKey key: String, `default`: String? = nil) -> String? {
-        return object(forKey: key) as? String ?? `default`
+    func string(forKey key: String, `default`: String = "") -> String {
+        return stringOrNil(forKey: key) ?? `default`
+    }
+    
+    func stringOrNil(forKey key: String) -> String? {
+        return object(forKey: key) as? String
     }
 }
