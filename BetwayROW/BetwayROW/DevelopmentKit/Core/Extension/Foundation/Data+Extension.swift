@@ -17,11 +17,11 @@ extension Data {
             return nil
         }
     }
-
+    
     var dictionary: GenericDictionary? {
         return object(with: self) as? GenericDictionary
     }
-
+    
     var array: GenericArray? {
         return object(with: self) as? GenericArray
     }

@@ -17,9 +17,9 @@ extension UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barStyle = .default
-        navigationController?.navigationBar.tintColor = Colours.shared.black
-        navigationController?.navigationBar.barTintColor = Colours.shared.background
-        navigationController?.navigationBar.backgroundColor = Colours.shared.background
+        navigationController?.navigationBar.tintColor = Colour.black
+        navigationController?.navigationBar.barTintColor = Colour.background
+        navigationController?.navigationBar.backgroundColor = Colour.background
     }
     
     public func navigationLineBar() {
@@ -28,9 +28,9 @@ extension UIViewController {
         navigationController?.navigationBar.shadowImage = nil
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barStyle = .default
-        navigationController?.navigationBar.tintColor = Colours.shared.black
-        navigationController?.navigationBar.barTintColor = Colours.shared.white
-        navigationController?.navigationBar.backgroundColor = Colours.shared.white
+        navigationController?.navigationBar.tintColor = Colour.black
+        navigationController?.navigationBar.barTintColor = Colour.white
+        navigationController?.navigationBar.backgroundColor = Colour.white
     }
     
     public func brandNavBar() {
@@ -46,7 +46,7 @@ extension UIViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.tintColor = Colours.shared.black
+        navigationController?.navigationBar.tintColor = Colour.black
         navigationController?.navigationBar.backgroundColor = UIColor.clear
         navigationController?.navigationBar.barStyle = .default
     }

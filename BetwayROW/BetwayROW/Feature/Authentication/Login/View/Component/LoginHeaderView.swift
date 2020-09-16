@@ -25,7 +25,7 @@ final class LoginHeaderView: BaseView {
     }()
     
     override func configureView() {
-        backgroundColor = Colours.shared.dark
+        backgroundColor = Colour.dark
         
         addSubview(closeButton)
         closeButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -Layout.spacing16).isActive = true

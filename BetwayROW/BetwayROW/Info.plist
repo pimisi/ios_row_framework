@@ -62,5 +62,13 @@
 	<string>https</string>
 	<key>BaseROWURL</key>
 	<string>pre-rowapi.gmgamingsystems.com</string>
+	<key>BaseROWURLVersion</key>
+	<string>api/v1</string>
+	<key>RegionCode</key>
+	<string>BBG</string>
+	<key>BTag</key>
+	<string>P59143-PR21500-CM51787-TS258398</string>
+	<key>GamingSystemsBaseURL</key>
+	<string>cms1.gmgamingsystems.com/gmapi</string>
 </dict>
 </plist>

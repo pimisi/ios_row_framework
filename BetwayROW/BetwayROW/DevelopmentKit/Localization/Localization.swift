@@ -8,16 +8,12 @@
 
 import Foundation
 
-public enum StringsFile: String {
-    case betwayStrings = "Localisable"
-}
-
-protocol LocalisableProtocol: Localisable {
+protocol LocalizationProtocol: Localization {
     static func localized(key: String, in file: StringsFile) -> String
 }
 
-class Localisable: LocalisableProtocol {
-    class func localized(key: String, in file: StringsFile = .betwayStrings) -> String {
+class Localization: LocalizationProtocol {
+    class func localized(key: String, in file: StringsFile = .betway) -> String {
         return NSLocalizedString(key,
                                  tableName: file.rawValue,
                                  bundle: Bundle.main,

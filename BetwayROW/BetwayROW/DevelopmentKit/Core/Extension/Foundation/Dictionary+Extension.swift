@@ -17,12 +17,16 @@ extension Dictionary {
             return nil
         }
     }
+    
+    mutating func set(value: Value?, for key: Key) {
+       self[key] = value
+   }
 }
 
 extension Dictionary where Key == String {
-
+    
     // MARK: - Getters
-
+    
     func object(forKey key: String) -> Any? {
         if key.contains("|") {
             let parts = key.split(separator: "|").map { String($0).trimmed }
@@ -35,16 +39,20 @@ extension Dictionary where Key == String {
         }
         return self[key]
     }
-
+    
     func int(forKey key: String, `default`: Int? = nil) -> Int? {
         if let string = object(forKey: key) as? String {
             return Int(string) ?? `default`
         }
-
+        
         return object(forKey: key) as? Int ?? `default`
     }
-
-    func string(forKey key: String, `default`: String? = nil) -> String? {
-        return object(forKey: key) as? String ?? `default`
+    
+    func string(forKey key: String, `default`: String = "") -> String {
+        return stringOrNil(forKey: key) ?? `default`
+    }
+    
+    func stringOrNil(forKey key: String) -> String? {
+        return object(forKey: key) as? String
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum FailureReason: FailureType {
+enum FailureReason: FailureType, Equatable {
     case unknown
     case invalidClient
     case invalidResponse
@@ -17,7 +17,7 @@ enum FailureReason: FailureType {
     case internetConnectionOffline
     case sslError
     case httpCode(HTTPCode?)
-
+    
     enum HTTPCode: FailureType {
         case badRequest
         case notFound
@@ -36,7 +36,7 @@ enum FailureReason: FailureType {
             default: self = .unknown
             }
         }
-
+        
         var value: Int {
             switch self {
             case .notFound: return 404
@@ -61,11 +61,11 @@ enum FailureReason: FailureType {
             return messageString
         }
     }
-
-    init(error: Error?) {
-        self = FailureReason(rawValue: error?.code ?? 1) ?? .unknown
+    
+    init(error: Error?, responseStatusCode: Int? = 1) {
+        self = FailureReason(rawValue: ((error?.code == responseStatusCode || error?.code == nil) ? responseStatusCode : error?.code) ?? 1) ?? .unknown
     }
-
+    
     init?(rawValue int: Int) {
         switch int {
         case 1: self = FailureReason.unknown
@@ -78,7 +78,7 @@ enum FailureReason: FailureType {
         default: self = FailureReason.httpCode(HTTPCode(rawValue: int))
         }
     }
-
+    
     var value: Int {
         switch self {
         case .unknown: return 1
@@ -91,7 +91,7 @@ enum FailureReason: FailureType {
         case .httpCode(let code): return code?.value ?? 1
         }
     }
-
+    
     var message: String? {
         var messageString: String?
         switch self {
@@ -103,7 +103,7 @@ enum FailureReason: FailureType {
         case .internetConnectionOffline: messageString = "The internet connection is offline"
         case .sslError: messageString = "An SSL error has occurred and a secure connection to the server cannot be made."
         case .httpCode(let code): return code?.message ?? "An unknown error occured."
-
+            
         }
         return messageString
     }

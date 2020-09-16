@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct APIError: FailureType, Codable {
+struct APIError: FailureType, Equatable, Codable {
+
     let message: String?
     let code: Int
     let errors: [APIFieldError?]?

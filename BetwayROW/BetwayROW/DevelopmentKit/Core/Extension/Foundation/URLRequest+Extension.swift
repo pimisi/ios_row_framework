@@ -23,7 +23,7 @@ extension URLRequest {
                     requestUrl = componentURL
                 }
             }
-
+            
             if requestUrl == nil {
                 requestUrl = url
                 debugLog("Failed to append the urlParameters `\(params)` to the url: \(url.absoluteString). Using the plain url instead.")
@@ -31,33 +31,31 @@ extension URLRequest {
         } else {
             requestUrl = url
         }
-
+        
         self.init(url: requestUrl, cachePolicy: .useProtocolCachePolicy, timeoutInterval: options?.requestTimeout ?? 60.0)
         httpMethod = method.asString
-
+        
         if let authorizationType = options?.authorizationType {
             
             let authorization = Constant.API.Headers.Authorization.self
-
+            
             switch authorizationType {
             case .basic:
                 if let encodedString = options?.authorizationValue {
                     addValue(authorization.Basic.value(encoded: encodedString), forHTTPHeaderField: authorization.key)
                 }
-            default:
-                // TODO: Implement loading of decrypted authorization token
-                break
+            default: break
             }
-
+            
             mutableOptions?.httpHeaders?.removeValue(forKey: authorization.key)
         }
-
+        
         let headers = URLSessionConfiguration.defaultHeaders.merging(mutableOptions?.httpHeaders ?? [:]) { $1 }
-
+        
         for (header, value) in headers {
             setValue(value, forHTTPHeaderField: header)
         }
-
+        
         httpBody = body
     }
 }

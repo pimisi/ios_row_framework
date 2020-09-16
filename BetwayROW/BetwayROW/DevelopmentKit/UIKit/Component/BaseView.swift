@@ -12,7 +12,7 @@ public class  BaseView: UIView {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = Colours.shared.white
+        self.backgroundColor = Colour.white
         self.configureView()
     }
     

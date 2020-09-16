@@ -36,7 +36,7 @@ class MainViewController: UIViewController {
     }
     
     private func configureButton() {
-        let loginButton = PrimaryButton()
+        let loginButton = Button(type: .primary)
         loginButton.setTitle(loginButtonTitle, for: .normal)
         loginButton.contentEdgeInsets = UIEdgeInsets(top: Layout.spacing4,
                                                      left: Layout.spacing10,
@@ -68,5 +68,5 @@ class MainViewController: UIViewController {
 
 // MARK: Localizable
 extension MainViewController {
-    var loginButtonTitle: String { Localisable.localized(key: "LOGIN")}
+    var loginButtonTitle: String { Localization.localized(key: "LOGIN")}
 }

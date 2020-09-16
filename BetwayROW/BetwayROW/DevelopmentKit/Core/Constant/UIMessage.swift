@@ -13,7 +13,7 @@ extension Constant {
         var title: String
         var detail: String
         var buttonTitle: String
-
+        
         init(title: String, detail: String, buttonTitle: String? = nil) {
             self.title = title
             self.detail = detail

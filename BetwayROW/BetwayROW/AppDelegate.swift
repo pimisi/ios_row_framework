@@ -12,13 +12,17 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
         configureNavigationBar()
+        setAppOpenCount()
+        
         return true
     }
 
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 }
@@ -32,9 +36,14 @@ extension AppDelegate {
 extension AppDelegate {
     fileprivate func configureNavigationBar() {
         let navigationBarAppearance = UINavigationBar.appearance()
+        
         navigationBarAppearance.tintColor = .white
         navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationBarAppearance.barStyle = .default
         navigationBarAppearance.barTintColor = .black
+    }
+    
+    func setAppOpenCount() {
+        Application.shared.incrementAppOpenCount()
     }
 }

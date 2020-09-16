@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6p-MZ-jsS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fUa-0b-p79">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -60,9 +60,75 @@
             </objects>
             <point key="canvasLocation" x="44.927536231884062" y="1.3392857142857142"/>
         </scene>
+        <!--Base View Controller-->
+        <scene sceneID="etw-PZ-jNW">
+            <objects>
+                <viewController storyboardIdentifier="BaseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fUa-0b-p79" customClass="BaseViewController" customModule="BetwayROW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dLN-Bg-3Bc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="betway-white" translatesAutoresizingMaskIntoConstraints="NO" id="CAC-LM-4Jj">
+                                <rect key="frame" x="77" y="394" width="260" height="108"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="108" id="J8N-vI-ifk"/>
+                                    <constraint firstAttribute="width" constant="260" id="sD4-Ir-RpV"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="7Ie-As-qAn">
+                                <rect key="frame" x="188.5" y="510" width="37" height="37"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhb-Ql-x1A" customClass="Button" customModule="BetwayROW" customModuleProvider="target">
+                                <rect key="frame" x="177" y="776" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="IVH-ck-V9P"/>
+                                    <constraint firstAttribute="height" constant="30" id="abf-UC-B4H"/>
+                                </constraints>
+                                <state key="normal" title="Retry">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="retry:" destination="fUa-0b-p79" eventType="touchUpInside" id="ddO-vw-2fc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CAC-LM-4Jj" firstAttribute="centerY" secondItem="dLN-Bg-3Bc" secondAttribute="centerY" id="91z-ns-prg"/>
+                            <constraint firstItem="fhb-Ql-x1A" firstAttribute="centerX" secondItem="dLN-Bg-3Bc" secondAttribute="centerX" id="JbI-Z6-0jy"/>
+                            <constraint firstItem="MVc-Jv-UPS" firstAttribute="bottom" secondItem="fhb-Ql-x1A" secondAttribute="bottom" constant="56" id="V5H-0z-wJ6"/>
+                            <constraint firstItem="CAC-LM-4Jj" firstAttribute="centerX" secondItem="dLN-Bg-3Bc" secondAttribute="centerX" id="YJw-G2-UXp"/>
+                            <constraint firstItem="7Ie-As-qAn" firstAttribute="centerX" secondItem="CAC-LM-4Jj" secondAttribute="centerX" id="mFt-I1-gHv"/>
+                            <constraint firstItem="7Ie-As-qAn" firstAttribute="top" secondItem="CAC-LM-4Jj" secondAttribute="bottom" constant="8" id="nk6-EI-rgi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MVc-Jv-UPS"/>
+                    </view>
+                    <connections>
+                        <outlet property="loadingActivityIndicator" destination="7Ie-As-qAn" id="ava-6C-fb8"/>
+                        <outlet property="retryButton" destination="fhb-Ql-x1A" id="KtA-wM-zNC"/>
+                        <segue destination="Y6p-MZ-jsS" kind="presentation" identifier="base" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="qQa-px-GSK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p14-Yd-PRb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-825" y="1"/>
+        </scene>
     </scenes>
     <resources>
         <image name="betway-logo" width="67.5" height="19"/>
+        <image name="betway-white" width="940" height="265"/>
         <image name="ic-betslip" width="14.5" height="18"/>
         <image name="ic-menu" width="20.5" height="16.5"/>
         <image name="ic-search" width="18.5" height="18.5"/>
