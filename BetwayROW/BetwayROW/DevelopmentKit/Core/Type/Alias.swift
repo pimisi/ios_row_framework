@@ -11,4 +11,4 @@ import Foundation
 typealias HashableKeyDictionary = [AnyHashable: Any]
 typealias StringKeyDictionary = [String: String]
 typealias GenericDictionary = HashableKeyDictionary
-typealias GenericArray = Array<Any>
+typealias GenericArray = [Any]

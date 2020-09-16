@@ -3,7 +3,7 @@
 //  BetwayROW
 //
 //  Created by Paul Imisi on 2020/09/11.
-//  Copyright © 2020 Paul Imisi. All rights reserved.
+//  Copyright © 2020 Betway. All rights reserved.
 //
 
 import UIKit
@@ -20,17 +20,32 @@ extension UIView {
         }
     }
     
-    func fit(inside view: UIView, leading: CGFloat = 0, top: CGFloat = 0, trailing: CGFloat = 0, bottom: CGFloat = 0) {
+    func fit(to view: UIView, leading: CGFloat? = nil, top: CGFloat? = nil, trailing: CGFloat? = nil, bottom: CGFloat? = nil) {
         if (self.superview != view) {
             view.addSubview(self)
         }
         
         translatesAutoresizingMaskIntoConstraints(false)
         
-        leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: leading).isActive = true
-        topAnchor.constraint(equalTo: view.topAnchor, constant: top).isActive = true
-        trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: trailing > 0 ? -trailing : trailing).isActive = true
-        bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: bottom > 0 ? -bottom : bottom).isActive = true
+        if let leading = leading {
+            leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: leading).isActive = true
+        }
+        
+        if let top = top {
+            topAnchor.constraint(equalTo: view.topAnchor, constant: top).isActive = true
+        }
+        
+        if let trailing = trailing {
+            trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: trailing > 0 ? -trailing : trailing).isActive = true
+        }
+        
+        if let bottom = bottom {
+            bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: bottom > 0 ? -bottom : bottom).isActive = true
+        }
+    }
+    
+    func fit(inside view: UIView, leading: CGFloat = 0, top: CGFloat = 0, trailing: CGFloat = 0, bottom: CGFloat = 0) {
+        fit(to: view, leading: leading, top: top, trailing: trailing, bottom: bottom)
     }
     
     func fit(inside view: UIView, horizontal: CGFloat = 0, vertical: CGFloat = 0) {
@@ -96,14 +111,14 @@ extension UIView {
             }
         }
         
-        if !availableConstraints.contains(.width) {
-            let widthAnchor = self.widthAnchor.constraint(equalToConstant: constraint[.width]!)
+        if !availableConstraints.contains(.width), let widthConstraint = constraint[.width] {
+            let widthAnchor = self.widthAnchor.constraint(equalToConstant: widthConstraint)
             widthAnchor.priority = UILayoutPriority(priority)
             widthAnchor.isActive = true
         }
         
-        if !availableConstraints.contains(.height) {
-            let heightAnchor = self.heightAnchor.constraint(equalToConstant: constraint[.height]!)
+        if !availableConstraints.contains(.height), let heightConstraint = constraint[.height]  {
+            let heightAnchor = self.heightAnchor.constraint(equalToConstant: heightConstraint)
             heightAnchor.priority = UILayoutPriority(priority)
             heightAnchor.isActive = true
         }
@@ -130,12 +145,82 @@ extension UIView {
             }
         }
         
-        if !availableConstraints.contains(.top) {
-            topAnchor.constraint(equalTo: superview!.topAnchor, constant: constraint[.top]!).isActive = true
+        if !availableConstraints.contains(.top), let superview = self.superview, let topConstraint = constraint[.top] {
+            topAnchor.constraint(equalTo: superview.topAnchor, constant: topConstraint).isActive = true
         }
         
-        if !availableConstraints.contains(.leading) {
-            leadingAnchor.constraint(equalTo: superview!.leadingAnchor, constant: constraint[.leading]!).isActive = true
+        if !availableConstraints.contains(.leading), let superview = self.superview, let leadingConstraint = constraint[.leading] {
+            leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: leadingConstraint).isActive = true
+        }
+    }
+    
+    @discardableResult
+    func width(_ width: CGFloat, breakingConstraint attribute: NSLayoutConstraint.Attribute? = nil) -> Self {
+        if let superview = self.superview, superview.subviews.contains(self), let attribute = attribute {
+            let positionConstraints = superview.constraints
+
+            for positionConstraint in positionConstraints {
+                if let firstItem = positionConstraint.firstItem as? UIView, firstItem == self, positionConstraint.firstAttribute == attribute {
+                    removeConstraint(positionConstraint)
+                }
+            }
+        }
+        
+        self.widthAnchor.constraint(equalToConstant: width).isActive = true
+        return self
+    }
+    
+    @discardableResult
+    func height(_ height: CGFloat, breakingConstraint attribute: NSLayoutConstraint.Attribute? = nil) -> Self {
+        
+        if let superview = self.superview, superview.subviews.contains(self), let attribute = attribute {
+            let positionConstraints = superview.constraints
+
+            for positionConstraint in positionConstraints {
+                if let firstItem = positionConstraint.firstItem as? UIView, firstItem == self, positionConstraint.firstAttribute == attribute {
+                    removeConstraint(positionConstraint)
+                }
+            }
+        }
+        
+        self.heightAnchor.constraint(equalToConstant: height).isActive = true
+        return self
+    }
+    
+    func pad(_ top: CGFloat, _ left: CGFloat, _ bottom: CGFloat, _ right: CGFloat) {
+        self.layoutMargins = UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
+    }
+    
+    func setBorderWidth(width: CGFloat, color: UIColor?, cornerRadius: CGFloat) {
+        self.layer.borderWidth = width
+        self.layer.borderColor = color?.cgColor
+        self.layer.cornerRadius = cornerRadius
+    }
+    
+    func tap(_ target: Any?, _ action: Selector) {
+        let tapGesture = UITapGestureRecognizer(target: target, action: action)
+        self.addGestureRecognizer(tapGesture)
+        self.isUserInteractionEnabled = true
+    }
+    
+    func square(ofSize dimension: CGFloat) {
+        height(dimension)
+        width(dimension)
+    }
+    
+    func attach(to view: UIView, targetPosition attribute: NSLayoutConstraint.Attribute) {
+        
+        guard let superview = self.superview, superview.subviews.contains(view) else {
+            debugLog("The views are not siblings. To use this functionality both views must have the same direct parent")
+            return
+        }
+        
+        switch attribute {
+        case .top: bottomAnchor ->> view.topAnchor
+        case .right: leftAnchor ->> view.rightAnchor
+        case .bottom: topAnchor ->> view.bottomAnchor
+        case .left: rightAnchor ->> view.leftAnchor
+        default: break
         }
     }
 }

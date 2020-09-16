@@ -3,7 +3,7 @@
 //  BetwayROW
 //
 //  Created by Paul Imisi on 2020/09/11.
-//  Copyright © 2020 Paul Imisi. All rights reserved.
+//  Copyright © 2020 Betway. All rights reserved.
 //
 
 import Foundation
@@ -84,19 +84,19 @@ class NetworkActivity {
     
     func setStatus(_ status: Status?, for key: String) {
         switch status {
-            case .started:
-                process.set(value: status, for: key)
-                
-                if self.status != .started {
-                    start?()
-                }
-            case .completed:
-                process.removeValue(forKey: key)
-                
-                if process.isEmpty {
-                    complete?()
-                }
-            case .none: break
+        case .started:
+            process.set(value: status, for: key)
+            
+            if self.status != .started {
+                start?()
+            }
+        case .completed:
+            process.removeValue(forKey: key)
+            
+            if process.isEmpty {
+                complete?()
+            }
+        case .none: break
         }
     }
     

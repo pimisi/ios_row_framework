@@ -44,9 +44,7 @@ extension URLRequest {
                 if let encodedString = options?.authorizationValue {
                     addValue(authorization.Basic.value(encoded: encodedString), forHTTPHeaderField: authorization.key)
                 }
-            default:
-                // TODO: Implement loading of decrypted authorization token
-                break
+            default: break
             }
             
             mutableOptions?.httpHeaders?.removeValue(forKey: authorization.key)

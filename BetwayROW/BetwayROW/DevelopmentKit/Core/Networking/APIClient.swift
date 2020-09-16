@@ -66,6 +66,7 @@ class APIClient: APIClientProtocol {
         
         let request = URLRequest(url: url, params: params, method: options.method ?? .get, options: options)
         
+        // swiftlint:disable closure_body_length
         session?.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 return completion(nil, error, response as? HTTPURLResponse)
@@ -155,7 +156,7 @@ class APIClient: APIClientProtocol {
         mutableOptions.method = .get
         mutableOptions.expectedStatusCode = mutableOptions.expectedStatusCode ?? 200
         mutableOptions.httpHeaders = [
-            APIHeaders.Key.referer: APIHeaders.Value.referer,
+            APIHeaders.Key.referer: APIHeaders.Value.referer
             ].merging(mutableOptions.httpHeaders ?? [:]) { $1 }
         
         dataTask(forRelativePath: relativePath, options: mutableOptions, urlParams: params) { data, error, response in
@@ -185,7 +186,7 @@ class APIClient: APIClientProtocol {
     ///         }
     ///
     /// - parameter completion: The completion handle to call when the call is completed.
-    func post(data json: GenericDictionary?, to relativePath: String?, options: APIOption? = nil, returnAsData: Bool = true, callback: @escaping (Any?, Error?, HTTPURLResponse?) -> ()) {
+    func post(data json: GenericDictionary?, to relativePath: String?, options: APIOption? = nil, returnAsData: Bool = true, callback: @escaping (Any?, Error?, HTTPURLResponse?) -> Void) {
         
         var mutableOptions = options ?? self.options
         mutableOptions.method = .post
@@ -193,7 +194,7 @@ class APIClient: APIClientProtocol {
         mutableOptions.httpHeaders = [
             APIHeaders.Key.productID: Application.shared.get(valuefor: Application.DataKey.productID),
             APIHeaders.Key.regionCode: APIHeaders.Value.regionCode,
-            APIHeaders.Key.referer: APIHeaders.Value.referer,
+            APIHeaders.Key.referer: APIHeaders.Value.referer
             ].merging(mutableOptions.httpHeaders ?? [:]) { $1 }
         
         let payload = json?.data

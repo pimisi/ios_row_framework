@@ -3,7 +3,7 @@
 //  BetwayROW
 //
 //  Created by Paul Imisi on 2020/09/14.
-//  Copyright © 2020 Paul Imisi. All rights reserved.
+//  Copyright © 2020 Betway. All rights reserved.
 //
 
 import Foundation
@@ -29,7 +29,7 @@ class SiteMapClient: APICientResponseProtocol {
         let params: StringKeyDictionary = [
             URLParams.Key.host: URLParams.Value.host,
             URLParams.Key.userAgent: URLParams.Value.userAgent,
-            URLParams.Key.app: URLParams.Value.app,
+            URLParams.Key.app: URLParams.Value.app
         ]
         
         client.get(dataFrom: path, urlParams: params, options: nil, returnAsData: true) { (data, error, response) in

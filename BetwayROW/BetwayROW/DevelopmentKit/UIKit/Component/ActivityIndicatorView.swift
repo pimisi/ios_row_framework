@@ -3,7 +3,7 @@
 //  BetwayROW
 //
 //  Created by Paul Imisi on 2020/09/11.
-//  Copyright © 2020 Paul Imisi. All rights reserved.
+//  Copyright © 2020 Betway. All rights reserved.
 //
 
 import UIKit
@@ -37,7 +37,7 @@ class ActivityIndicatorView: UIView {
     @discardableResult
     class func show(in view: UIView) -> ActivityIndicatorView {
         let indicatorView = ActivityIndicatorView(frame: view.bounds)
-        indicatorView.isOpaque = false;
+        indicatorView.isOpaque = false
         
         view.addSubview(indicatorView)
         view.isUserInteractionEnabled = false

@@ -1,7 +1,9 @@
 # Rules based on default swiftlint.
 
 included: # paths to include during linting. `--path` is ignored if present.
-  - "ios-row"
+  - "BetwayROW"
+  - "BetwayROWUITests"
+  - "BetwayROWTests"
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Carthage
   - Pods
@@ -16,7 +18,6 @@ disabled_rules: # rule identifiers to exclude from running
   - large_tuple
   - type_name
   - members_naming_id
-  - nesting
 opt_in_rules: # some rules are only opt-in
   - empty_count
   - implicitly_unwrapped_optional
@@ -53,8 +54,8 @@ type_body_length:
   warning: 200
   error: 450
 line_length:
-  warning: 240
-  error: 620
+  warning: 400
+  error: 750
   ignores_function_declarations: false
   ignores_urls: true
   ignores_interpolated_strings: true
@@ -64,3 +65,4 @@ file_length:
 indentation: 2
 force_cast: warning
 force_try: warning
+

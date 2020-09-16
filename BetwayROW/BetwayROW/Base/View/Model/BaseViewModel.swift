@@ -3,7 +3,7 @@
 //  BetwayROW
 //
 //  Created by Paul Imisi on 2020/09/14.
-//  Copyright © 2020 Paul Imisi. All rights reserved.
+//  Copyright © 2020 Betway. All rights reserved.
 //
 
 import Foundation
@@ -42,7 +42,7 @@ class BaseViewModel: ProcessMonitoring {
         
         sitemapClient.getSiteMap { result in
             switch result {
-            case .success(_):
+            case .success(payload: _):
                 self.processing.set(success: true)
             case .failure(let failure):
                 debugLog(String(describing: Self.self), message: "Error fetching sitemap: \(String(describing: failure?.description))")

@@ -14,6 +14,7 @@ public class ConstantType {
 
 typealias ApplicationConstant = Constant.Application
 
+// swiftlint:disable nesting
 public class Constant: ConstantType {
     static let infoDictionary = Bundle.main.infoDictionary
     static let bundle = Bundle(for: Constant.self)

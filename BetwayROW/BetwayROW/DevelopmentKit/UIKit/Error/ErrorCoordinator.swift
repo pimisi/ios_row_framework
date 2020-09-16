@@ -3,7 +3,7 @@
 //  BetwayROW
 //
 //  Created by Paul Imisi on 2020/09/11.
-//  Copyright © 2020 Paul Imisi. All rights reserved.
+//  Copyright © 2020 Betway. All rights reserved.
 //
 
 import UIKit
@@ -29,7 +29,7 @@ class ErrorCoordinator {
                 switch error {
                 case .internetConnectionOffline:
                     uiMessage = Constant.API.Network.Error.noInternetConnection
-                case .unknown: uiMessage = Constant.UIMessage(title: failure.title ?? "Error", detail: error.message!)
+                case .unknown: uiMessage = Constant.UIMessage(title: failure.title ?? "Error", detail: error.message ?? "Unknown")
                 case .sslError:
                     uiMessage = Constant.API.Response.Error.ssl.display
                     debugLog(Constant.API.Response.Error.ssl.debug ?? "ssl error")

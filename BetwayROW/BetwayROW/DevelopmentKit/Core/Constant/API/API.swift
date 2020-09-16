@@ -20,6 +20,7 @@ extension Constant.BundleKey {
 }
 
 extension Constant {
+    // swiftlint:disable nesting
     class API: ConstantType {
         private static let bundle = Bundle(for: Constant.self)
         

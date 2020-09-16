@@ -3,7 +3,7 @@
 //  BetwayROW
 //
 //  Created by Paul Imisi on 2020/09/14.
-//  Copyright © 2020 Paul Imisi. All rights reserved.
+//  Copyright © 2020 Betway. All rights reserved.
 //
 
 import Foundation
@@ -19,6 +19,7 @@ struct SiteMap: Codable {
 }
 
 struct Sitemap: Codable {
+    // swiftlint:disable identifier_name
     let A, APPCOPY, C, DMC, M, P, PG, PKW, PD, PN, MID, PT, T, RE: String?
     let FN, SM, SN, TN : Bool?
     let N: Navigation?
