@@ -36,9 +36,6 @@ final class LoginViewController: UIViewController {
 }
 
 // MARK: Network Calls
-extension LoginViewController {
-    fileprivate func handleLogin() {}
-}
 
 extension LoginViewController: UITextFieldDelegate {
     
