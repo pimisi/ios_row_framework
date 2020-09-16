@@ -10,6 +10,8 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     
+    var didTapCloseView: (() -> Void)?
+    
     lazy var userNameTextField: InputTextField = {
         let textField = InputTextField()
         textField.delegate = self
@@ -62,40 +64,51 @@ final class LoginViewController: UIViewController {
         return view
     }()
     
+    lazy var dismissView: LoginHeaderView = {
+        let view = LoginHeaderView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     // MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         constrainViews()
+        setDismissView()
     }
     
     private func configureView() {
         self.title = loginTitleText
         view.isOpaque = false
         view.backgroundColor = Colours.shared.black.withAlphaComponent(0.5)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: closeButtonImage,
-                                                            style: .plain,
-                                                            target: self,
-                                                            action: #selector(didTapDismissController))
     }
 
     private func constrainViews() {
+        view.addSubview(dismissView)
         view.addSubview(loginBackgroundView)
         loginBackgroundView.addSubview(loginStackView)
         
+        dismissView.leftAnchor ->> view.leftAnchor
+        dismissView.rightAnchor ->> view.rightAnchor
+        dismissView.topAnchor ->> view.topAnchor
+        dismissView.height(Layout.spacing56)
+        
         loginBackgroundView.leftAnchor ->> view.leftAnchor
         loginBackgroundView.rightAnchor ->> view.rightAnchor
-        loginBackgroundView.topAnchor ->> view.topAnchor
-        loginBackgroundView.height(Layout.spacing400)
+        loginBackgroundView.topAnchor ->> dismissView.bottomAnchor
+        loginBackgroundView.height(Layout.spacing300)
         
         loginStackView.leftAnchor.constraint(equalTo: loginBackgroundView.leftAnchor, constant: Layout.spacing16).isActive = true
         loginStackView.rightAnchor.constraint(equalTo: loginBackgroundView.rightAnchor, constant: -Layout.spacing16).isActive = true
-        loginStackView.topAnchor.constraint(equalTo: loginBackgroundView.topAnchor, constant: Layout.spacing120).isActive = true
+        loginStackView.topAnchor.constraint(equalTo: loginBackgroundView.topAnchor, constant: Layout.spacing20).isActive = true
         loginStackView.bottomAnchor.constraint(equalTo: loginBackgroundView.bottomAnchor, constant: -Layout.spacing48).isActive = true
     }
     
-    @objc private func didTapDismissController() {
-        dismiss(animated: false, completion: nil)
+    private func setDismissView() {
+        dismissView.handleCloseButtonTapped = { [weak self] in
+            self?.didTapCloseView?()
+        }
     }
 }
 

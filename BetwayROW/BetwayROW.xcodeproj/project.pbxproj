@@ -15,6 +15,8 @@
 		CE5B4CE2250F911500E7C0B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B4CDF250F911500E7C0B4 /* LoginViewController.swift */; };
 		CE5C03362510B8E70014F0FF /* LoginViewController + TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C03352510B8E70014F0FF /* LoginViewController + TextFieldExtension.swift */; };
 		CE5C03392510BA830014F0FF /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C03382510BA830014F0FF /* Layout.swift */; };
+		CE661F29251212730019C7FA /* LoginHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE661F28251212730019C7FA /* LoginHeaderView.swift */; };
+		CE661F2B251212C10019C7FA /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE661F2A251212C10019C7FA /* BaseView.swift */; };
 		CE7BFEA8250BA3B8009CDCDF /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BFEA7250BA3B8009CDCDF /* Colours.swift */; };
 		CE7BFEAA250BA41E009CDCDF /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BFEA9250BA41E009CDCDF /* PrimaryButton.swift */; };
 		CE7BFEAD250BA486009CDCDF /* Localisable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE7BFEAC250BA486009CDCDF /* Localisable.strings */; };
@@ -85,6 +87,8 @@
 		CE5B4CDF250F911500E7C0B4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE5C03352510B8E70014F0FF /* LoginViewController + TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController + TextFieldExtension.swift"; sourceTree = "<group>"; };
 		CE5C03382510BA830014F0FF /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		CE661F28251212730019C7FA /* LoginHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHeaderView.swift; sourceTree = "<group>"; };
+		CE661F2A251212C10019C7FA /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		CE7BFEA7250BA3B8009CDCDF /* Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
 		CE7BFEA9250BA41E009CDCDF /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		CE7BFEAC250BA486009CDCDF /* Localisable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localisable.strings; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 			children = (
 				CE5B4CDF250F911500E7C0B4 /* LoginViewController.swift */,
 				CE5C03352510B8E70014F0FF /* LoginViewController + TextFieldExtension.swift */,
+				CE661F28251212730019C7FA /* LoginHeaderView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 				CE7BFEA9250BA41E009CDCDF /* PrimaryButton.swift */,
 				CE7E5278250F9CFF00F1EE57 /* SecondaryButton.swift */,
 				CE7BFEAE250BA6B6009CDCDF /* InputTextField.swift */,
+				CE661F2A251212C10019C7FA /* BaseView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -739,6 +745,8 @@
 				D8D96EF1250A4F3300B0F26B /* FailureReason.swift in Sources */,
 				D8D96EF7250A4F3300B0F26B /* Constant.swift in Sources */,
 				D8D96EF4250A4F3300B0F26B /* APIFieldError.swift in Sources */,
+				CE661F29251212730019C7FA /* LoginHeaderView.swift in Sources */,
+				CE661F2B251212C10019C7FA /* BaseView.swift in Sources */,
 				CE5C03392510BA830014F0FF /* Layout.swift in Sources */,
 				D8D96EF3250A4F3300B0F26B /* APIError.swift in Sources */,
 			);

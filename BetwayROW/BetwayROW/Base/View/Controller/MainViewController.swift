@@ -47,11 +47,21 @@ class MainViewController: UIViewController {
     }
     
     @objc private func didTapLogin() {
-        loginViewController.view.frame.origin = CGPoint(x: 0.0, y: 64.0)
+        loginViewController.view.frame.origin = CGPoint(x: 0.0,
+                                                        y: Layout.spacing80)
         loginViewController.view.frame.size = CGSize(width: view.frame.width,
                                                      height: view.frame.height)
         view.addSubview(loginViewController.view)
         loginViewController.didMove(toParent: self)
+        
+        loginViewController.didTapCloseView = { [weak self] in
+            self?.didTapCloseLoginView()
+        }
+    }
+    
+    private func didTapCloseLoginView() {
+        loginViewController.view.removeFromSuperview()
+        loginViewController.removeFromParent()
     }
     
 }
