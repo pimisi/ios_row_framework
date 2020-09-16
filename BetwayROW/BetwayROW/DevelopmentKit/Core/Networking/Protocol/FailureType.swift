@@ -12,3 +12,9 @@ protocol FailureType: Error {
     var message: String? { get }
     var value: Int { get }
 }
+
+extension FailureType {
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.value == rhs.value
+    }
+}

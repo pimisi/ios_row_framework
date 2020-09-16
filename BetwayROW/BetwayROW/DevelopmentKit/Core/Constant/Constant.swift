@@ -12,10 +12,23 @@ public class ConstantType {
     fileprivate init() {}
 }
 
+typealias ApplicationConstant = Constant.Application
+
 public class Constant: ConstantType {
     static let infoDictionary = Bundle.main.infoDictionary
+    static let bundle = Bundle(for: Constant.self)
     
-    static var appVersionString: String? {
-        return infoDictionary?["CFBundleShortVersionString"] as? String
+    class BundleKey: ConstantType {}
+    
+    class Application: ConstantType {
+        static var versionString: String? {
+            return infoDictionary?["CFBundleShortVersionString"] as? String
+        }
+        
+        class Data: ConstantType {
+            class Key: ConstantType {
+                static let productID = "ProductID"
+            }
+        }
     }
 }

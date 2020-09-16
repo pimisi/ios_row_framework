@@ -17,6 +17,10 @@ extension Dictionary {
             return nil
         }
     }
+    
+    mutating func set(value: Value?, for key: Key) {
+       self[key] = value
+   }
 }
 
 extension Dictionary where Key == String {
@@ -44,7 +48,11 @@ extension Dictionary where Key == String {
         return object(forKey: key) as? Int ?? `default`
     }
     
-    func string(forKey key: String, `default`: String? = nil) -> String? {
-        return object(forKey: key) as? String ?? `default`
+    func string(forKey key: String, `default`: String = "") -> String {
+        return stringOrNil(forKey: key) ?? `default`
+    }
+    
+    func stringOrNil(forKey key: String) -> String? {
+        return object(forKey: key) as? String
     }
 }

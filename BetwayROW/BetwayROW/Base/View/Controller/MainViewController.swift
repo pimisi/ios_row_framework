@@ -9,24 +9,8 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
-    override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge {
-        return UIRectEdge.bottom
-    }
-    
-    override var prefersHomeIndicatorAutoHidden: Bool {
-        return false
-    }
-    
-    override var prefersStatusBarHidden : Bool {
-        return true
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
     
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
     }
 }

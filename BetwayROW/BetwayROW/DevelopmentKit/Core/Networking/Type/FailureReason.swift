@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum FailureReason: FailureType {
+enum FailureReason: FailureType, Equatable {
     case unknown
     case invalidClient
     case invalidResponse
@@ -62,8 +62,8 @@ enum FailureReason: FailureType {
         }
     }
     
-    init(error: Error?) {
-        self = FailureReason(rawValue: error?.code ?? 1) ?? .unknown
+    init(error: Error?, responseStatusCode: Int? = 1) {
+        self = FailureReason(rawValue: ((error?.code == responseStatusCode || error?.code == nil) ? responseStatusCode : error?.code) ?? 1) ?? .unknown
     }
     
     init?(rawValue int: Int) {

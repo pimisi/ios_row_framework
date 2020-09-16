@@ -12,11 +12,11 @@ class APIClient: APIClientProtocol {
     
     private var session: URLSession?
     
-    let url: URL
+    private var url: URL?
     let options = APIOption()
     let defaultHeaders: HashableKeyDictionary = Constant.API.Headers.ContentType.json
     
-    private init(withURL url: URL) {
+    private init(withURL url: URL? = nil) {
         self.url = url
         
         let configuration = URLSessionConfiguration.default
@@ -25,18 +25,28 @@ class APIClient: APIClientProtocol {
         session = URLSession(configuration: configuration)
     }
     
-    private static func prepare(urlString: String) -> APIClientProtocol? {
-        guard let url = URL(string: urlString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)) else {
-            return nil
-        }
-        return APIClient(withURL: url)
+    private static func prepare(urlString: String?) -> APIClientProtocol {
+        return APIClient(withURL: urlFromString(urlString))
     }
     
     /// Call this to initialize and prepare the client
     ///
     /// - parameter url: The base `url` to initialize the `client` with. The `url` should include the protocol. e.g. `https://rowapi.gmgamingsystems.com`
-    static func client(withURL url: String) -> APIClientProtocol? {
+    static func client(withURL url: String?) -> APIClientProtocol {
         return prepare(urlString: url)
+    }
+    
+    private static func urlFromString(_ urlString: String?) -> URL? {
+        
+        guard let urlString = urlString, let url = URL(string: urlString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)) else {
+            return nil
+        }
+        
+        return url
+    }
+    
+    func setBaseURL(withString urlString: String) {
+        self.url = APIClient.urlFromString(urlString)
     }
     
     /// Creates and resumes a data task with the instance's session.
@@ -48,7 +58,10 @@ class APIClient: APIClientProtocol {
     ///   - completion: The completion handle to call when the call is completed.
     func dataTask(forRelativePath path: String?, options: APIOption? = nil, urlParams params: StringKeyDictionary? = nil, payload: Data? = nil, completion: @escaping (Data?, Error?, HTTPURLResponse?) -> Void) {
         
-        let url: URL = self.url.appendingPathComponent(path ?? "")
+        guard let url: URL = self.url?.appendingPathComponent(path ?? "") else {
+            return completion(nil, NSError(domain: Constant.API.errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: ResponseErrorConstant.noBaseURL]), nil)
+        }
+        
         let options = options ?? APIOption()
         
         let request = URLRequest(url: url, params: params, method: options.method ?? .get, options: options)
@@ -75,10 +88,12 @@ class APIClient: APIClientProtocol {
                     do {
                         error = try decoder.decode(APIError.self, from: data)
                     } catch let error {
-                        debugLog(String(describing: Self.self), message: "Error decoding results: \(error)")
+                        debugLog(String(describing: Self.self), message: "Error decoding response data: \(error.localizedDescription)")
                     }
                     // TODO: Log to splunk
-                } else {
+                }
+                
+                if error == nil {
                     error = NSError(domain: Constant.API.errorDomain, code: httpResponse.statusCode, userInfo: [NSLocalizedDescriptionKey: ResponseErrorConstant.Unexpected.Code.message])
                     
                     if let debugMessage = ResponseErrorConstant.Unexpected.ResposeType.message.debug?.replaceOccurrencies(of: [ResponseErrorConstant.Unexpected.Placeholder.function, ResponseErrorConstant.Unexpected.Placeholder.returned], with: ["\(#function)", String(describing: data?.dictionary)]) {
@@ -97,6 +112,20 @@ class APIClient: APIClientProtocol {
             
             completion(responseData, nil, httpResponse)
         }.resume()
+    }
+    
+    fileprivate func object(for data: Data?, returnAsData: Bool) -> Any? {
+        var result: Any?
+        
+        if let array = data?.array, !returnAsData {
+            result = array
+        } else if let dictionary = data?.dictionary, !returnAsData {
+            result = dictionary
+        } else {
+            result = data
+        }
+        
+        return result
     }
     
     /// Gets data by doing a `GET` API call to the provided relative path
@@ -120,14 +149,18 @@ class APIClient: APIClientProtocol {
     ///         }
     ///
     ///  - parameter completion: The completion handle to call when the call is completed.
-    func get(dataFrom relativePath: String?, urlParams params: StringKeyDictionary? = nil, options: APIOption? = nil, callback: @escaping (Any?, Error?, HTTPURLResponse?) -> Void) {
+    func get(dataFrom relativePath: String?, urlParams params: StringKeyDictionary? = nil, options: APIOption? = nil, returnAsData: Bool = true, callback: @escaping (Any?, Error?, HTTPURLResponse?) -> Void) {
         
-        var mutableOptions = options ?? APIOption()
+        var mutableOptions = options ?? self.options
         mutableOptions.method = .get
         mutableOptions.expectedStatusCode = mutableOptions.expectedStatusCode ?? 200
+        mutableOptions.httpHeaders = [
+            APIHeaders.Key.referer: APIHeaders.Value.referer,
+            ].merging(mutableOptions.httpHeaders ?? [:]) { $1 }
         
         dataTask(forRelativePath: relativePath, options: mutableOptions, urlParams: params) { data, error, response in
-            callback(data, error, response)
+            
+            callback(self.object(for: data, returnAsData: returnAsData), error, response)
         }
     }
     
@@ -152,12 +185,13 @@ class APIClient: APIClientProtocol {
     ///         }
     ///
     /// - parameter completion: The completion handle to call when the call is completed.
-    func post(data json: GenericDictionary?, to relativePath: String?, options: APIOption? = nil, callback: @escaping (AnyObject?, Error?, HTTPURLResponse?) -> ()) {
+    func post(data json: GenericDictionary?, to relativePath: String?, options: APIOption? = nil, returnAsData: Bool = true, callback: @escaping (Any?, Error?, HTTPURLResponse?) -> ()) {
         
-        var mutableOptions = options ?? APIOption()
+        var mutableOptions = options ?? self.options
         mutableOptions.method = .post
+        mutableOptions.expectedStatusCode = mutableOptions.expectedStatusCode ?? 200
         mutableOptions.httpHeaders = [
-            APIHeaders.Key.productID: "",
+            APIHeaders.Key.productID: Application.shared.get(valuefor: Application.DataKey.productID),
             APIHeaders.Key.regionCode: APIHeaders.Value.regionCode,
             APIHeaders.Key.referer: APIHeaders.Value.referer,
             ].merging(mutableOptions.httpHeaders ?? [:]) { $1 }
@@ -166,17 +200,7 @@ class APIClient: APIClientProtocol {
         
         dataTask(forRelativePath: relativePath, options: mutableOptions, payload: payload) { data, error, response in
             
-            var result: AnyObject?
-            
-            if let array = data?.array {
-                result = array as AnyObject
-            } else if let dictionary = data?.dictionary {
-                result = dictionary as AnyObject
-            } else {
-                result = data as AnyObject?
-            }
-            
-            callback(result, error, response)
+            callback(self.object(for: data, returnAsData: returnAsData), error, response)
         }
         
     }
