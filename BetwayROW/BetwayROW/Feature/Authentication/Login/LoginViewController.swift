@@ -39,6 +39,13 @@ final class LoginViewController: UIViewController {
         return button
     }()
     
+    lazy var forgotPasswordButton: UIButton = {
+        let button = UIButton()
+        button.isEnabled = false
+        button.setTitle(registerButtonText, for: .normal)
+        return button
+    }()
+    
     lazy var loginStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [userNameTextField, passwordTextField, loginButton, registerButton])
         stackView.distribution = .fillEqually
@@ -55,6 +62,7 @@ final class LoginViewController: UIViewController {
         return view
     }()
     
+    // MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -65,7 +73,10 @@ final class LoginViewController: UIViewController {
         self.title = loginTitleText
         view.isOpaque = false
         view.backgroundColor = Colours.shared.black.withAlphaComponent(0.5)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: closeButtonImage, style: .plain, target: self, action: #selector(didTapDismissController))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: closeButtonImage,
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(didTapDismissController))
     }
 
     private func constrainViews() {

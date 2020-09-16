@@ -12,6 +12,8 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var loginBarButton: UIBarButtonItem!
     
+    private let loginViewController = LoginViewController()
+    
     override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge {
         return UIRectEdge.bottom
     }
@@ -45,9 +47,11 @@ class MainViewController: UIViewController {
     }
     
     @objc private func didTapLogin() {
-        let loginNavigationViewController = UINavigationController(rootViewController: LoginViewController())
-        loginNavigationViewController.modalPresentationStyle = .overCurrentContext
-        self.present(loginNavigationViewController, animated: false, completion: nil)
+        loginViewController.view.frame.origin = CGPoint(x: 0.0, y: 64.0)
+        loginViewController.view.frame.size = CGSize(width: view.frame.width,
+                                                     height: view.frame.height)
+        view.addSubview(loginViewController.view)
+        loginViewController.didMove(toParent: self)
     }
     
 }
