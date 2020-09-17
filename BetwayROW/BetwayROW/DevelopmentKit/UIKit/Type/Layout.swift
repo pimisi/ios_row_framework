@@ -9,7 +9,6 @@
 import UIKit
 
 public enum Layout {
-
     static let spacing4: CGFloat = 4
     static let spacing5: CGFloat = 5
     static let spacing8: CGFloat = 8
