@@ -8,16 +8,12 @@
 
 import Foundation
 
-protocol LocalizationProtocol: Localization {
+protocol LocalizationProtocol: Localizable {
     static func localized(key: String, in file: StringsFile) -> String
 }
 
-class Localization: LocalizationProtocol {
+class Localizable: LocalizationProtocol {
     class func localized(key: String, in file: StringsFile = .betway) -> String {
-        return NSLocalizedString(key,
-                                 tableName: file.rawValue,
-                                 bundle: Bundle.main,
-                                 value: "",
-                                 comment: "")
+        return NSLocalizedString(key, tableName: file.rawValue, bundle: Bundle.main, value: "", comment: "")
     }
 }

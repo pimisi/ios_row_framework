@@ -18,7 +18,7 @@ class ErrorCoordinator {
         }
     }
     
-    var action: ((UIAlertAction) -> Void)?
+    var action: ((AlertAction) -> Void)?
     
     func processError() {
         var uiMessage: Constant.UIMessage?
@@ -44,7 +44,7 @@ class ErrorCoordinator {
         if let displayMessage = uiMessage {
             DispatchQueue.main.async {
                 if let viewController = AppDelegate.rootViewController {
-                    UIAlertController.okayAlert(withTitle: displayMessage.title, message: displayMessage.detail)
+                    AlertController.okayAlert(withTitle: displayMessage.title, message: displayMessage.detail)
                         .secondary(handler: self.action)
                         .showIn(viewController, completion: {
                             self.action = nil

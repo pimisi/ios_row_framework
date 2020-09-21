@@ -3,17 +3,20 @@
 //  BetwayROW
 //
 //  Created by Paul Imisi on 2020/09/17.
-//  Copyright © 2020 Paul Imisi. All rights reserved.
+//  Copyright © 2020 Betway. All rights reserved.
 //
 
 import UIKit
 
 extension UIViewController {
     
-    private func configureNavigationBar(isTranslucent: Bool = false,
-                               backgroundImage: UIImage? = nil, shadowImage: UIImage? = nil,
-                               barStyle: UIBarStyle = .default,
-                               hidden: Bool = false, animated: Bool = true) {
+    private func configureNavigationBar(
+        isTranslucent: Bool = false,
+        backgroundImage: UIImage? = nil,
+        shadowImage: UIImage? = nil,
+        barStyle: UIBarStyle = .default,
+        hidden: Bool = false,
+        animated: Bool = true) {
         
         navigationController?.setNavigationBarHidden(hidden, animated: animated)
         navigationController?.navigationBar.setBackgroundImage(backgroundImage, for: UIBarMetrics.default)
@@ -27,8 +30,8 @@ extension UIViewController {
         configureNavigationBar(backgroundImage: UIImage(), shadowImage: UIImage())
         
         navigationController?.navigationBar.tintColor = Colour.black
-        navigationController?.navigationBar.barTintColor = Colour.background
-        navigationController?.navigationBar.backgroundColor = Colour.background
+        navigationController?.navigationBar.barTintColor = Colour.Background.default
+        navigationController?.navigationBar.backgroundColor = Colour.Background.default
     }
     
     public func navigationLineBar() {

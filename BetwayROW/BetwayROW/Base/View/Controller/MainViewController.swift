@@ -14,59 +14,35 @@ class MainViewController: UIViewController {
     
     private let loginViewController = LoginViewController()
     
-    override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge {
-        return UIRectEdge.bottom
-    }
-    
-    override var prefersHomeIndicatorAutoHidden: Bool {
-        return false
-    }
-
-    override var prefersStatusBarHidden: Bool {
-        return false
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureButton()
+        configureLoginButton()
     }
     
-    private func configureButton() {
-        let loginButton = Button(type: .primary)
+    private func configureLoginButton() {
+        let loginButton = Button(type: .primary, frame: CGRect(origin: .zero, size: CGSize(width: Layout.Size.size70, height: Layout.Size.size32)))
         loginButton.setTitle(loginButtonTitle, for: .normal)
-        loginButton.contentEdgeInsets = UIEdgeInsets(top: Layout.spacing4,
-                                                     left: Layout.spacing10,
-                                                     bottom: Layout.spacing4,
-                                                     right: Layout.spacing10)
+        loginButton.contentEdgeInsets = UIEdgeInsets(top: Layout.spacing4, left: Layout.spacing10, bottom: Layout.spacing4, right: Layout.spacing10)
         loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
         loginBarButton.customView = loginButton
     }
     
     @objc private func didTapLogin() {
-        loginViewController.view.frame.origin = CGPoint(x: 0.0,
-                                                        y: Layout.spacing80)
-        loginViewController.view.frame.size = CGSize(width: view.frame.width,
-                                                     height: view.frame.height)
-        view.addSubview(loginViewController.view)
-        loginViewController.didMove(toParent: self)
+        let loginAlert = AlertController(title: Localizable.localized(key: "LOGIN"))
         
-        loginViewController.didTapCloseView = { [weak self] in
-            self?.didTapCloseLoginView()
-        }
+        let loginViewContainer = UIView()
+        loginViewContainer.backgroundColor = .blue
+        let loginView = LoginFormView(parent: loginViewContainer)
+        loginView.attachToParent()
+        loginAlert.bodyView = loginViewContainer
+        loginAlert.showDismissIcon = true
+        
+        parent?.present(loginAlert, animated: true, completion: nil)
     }
-    
-    private func didTapCloseLoginView() {
-        loginViewController.view.removeFromSuperview()
-        loginViewController.removeFromParent()
-    }
-    
 }
 
 // MARK: Localizable
+
 extension MainViewController {
-    var loginButtonTitle: String { Localization.localized(key: "LOGIN")}
+    var loginButtonTitle: String { Localizable.localized(key: "LOGIN")}
 }

@@ -11,6 +11,10 @@ import UIKit
 @IBDesignable
 class Button: UIButton {
     
+    enum CustomType {
+        case primary, secondary, `default`(type: UIButton.ButtonType)
+    }
+
     @IBInspectable
     public var borderColor: UIColor? {
         get {
@@ -40,12 +44,13 @@ class Button: UIButton {
         }
     }
     
-    var type: CustomButtonType = .`default`(type: .custom)
+    var type: CustomType = .`default`(type: .custom)
     
-    init(type: CustomButtonType = .`default`(type: .system), frame: CGRect = .zero) {
+    init(type: CustomType = .`default`(type: .system), frame: CGRect = .zero) {
         self.type = type
-        
+       
         super.init(frame: frame)
+        
         setup()
     }
     
@@ -66,25 +71,50 @@ class Button: UIButton {
     
     public func setup() {
         
+        if self.frame == .zero {
+            var frame = self.frame
+            frame.size.height = 40
+            self.frame = frame
+        }
+        
         switch type {
         case .`default`:
-            titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+            titleLabel?.font = UIFont(name: "Arial", size: 12)
         default:
-            borderWidth = 2.0
             cornerRadius = 2.0
             
             switch type {
             case .primary:
-                setTitleColor(Colour.white, for: .normal)
                 backgroundColor = Colour.primary
+                setTitleColor(Colour.white, for: .normal)
+                titleLabel?.font = UIFont(name: "Arial", size: 12)?.bold()
+                setBackgroundImage(UIImage.from(color: Colour.primaryHover), for: .highlighted)
+                setBackgroundImage(UIImage.from(color: Colour.primary.withAlphaComponent(0.4)), for: .disabled)
             case .secondary:
+                borderWidth = 1.0
                 borderColor = Colour.primary
-                titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-                setTitleColor(Colour.primary, for: .normal)
+                titleLabel?.font = UIFont(name: "Arial", size: 12)
                 backgroundColor = Colour.white
+                setTitleColor(Colour.primary, for: .normal)
+                setTitleColor(Colour.white, for: .highlighted)
+                setBackgroundImage(UIImage.from(color: Colour.primary), for: .highlighted)
             default: break
             }
         }
     }
-    
+}
+
+extension UIFont {
+
+    func withTraits(traits:UIFontDescriptor.SymbolicTraits...) -> UIFont {
+        if let descriptor = self.fontDescriptor
+            .withSymbolicTraits(UIFontDescriptor.SymbolicTraits(traits)) {
+            return UIFont(descriptor: descriptor, size: 0)
+        }
+        return UIFont()
+    }
+
+    func bold() -> UIFont {
+        return withTraits(traits: .traitBold)
+    }
 }

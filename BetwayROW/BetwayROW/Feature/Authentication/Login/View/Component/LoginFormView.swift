@@ -3,7 +3,7 @@
 //  BetwayROW
 //
 //  Created by Paul Imisi on 2020/09/16.
-//  Copyright © 2020 Paul Imisi. All rights reserved.
+//  Copyright © 2020 Betway. All rights reserved.
 //
 
 import UIKit
@@ -49,6 +49,9 @@ class LoginFormView: UIView {
         let textField = TextField()
         textField.delegate = textFielfDelegate
         textField.placeholder = Placeholder.username
+        textField.bordered(width: 1, cornerRadius: 2, color: Colour.Grey.light)
+        textField.leftPadding = 10
+        textField.font = UIFont.systemFont(ofSize: 16.0)
         return textField
     }()
     
@@ -56,6 +59,9 @@ class LoginFormView: UIView {
         let textField = TextField(type: .password)
         textField.delegate = textFielfDelegate
         textField.placeholder = Placeholder.password
+        textField.bordered(width: 1, cornerRadius: 2, color: Colour.Grey.light)
+        textField.leftPadding = 10
+        textField.font = UIFont.systemFont(ofSize: 16.0)
         return textField
     }()
     
@@ -73,6 +79,10 @@ class LoginFormView: UIView {
     }()
     
     lazy var elementStack: UIStackView = {
+        
+        loginButton.translateSizeToConstraints()
+        registerButton.translateSizeToConstraints()
+        
         let stackView = UIStackView(arrangedSubviews: [usernameTextField, passwordTextField, loginButton, registerButton])
         stackView.distribution = .fillEqually
         stackView.axis = .vertical
@@ -109,17 +119,12 @@ class LoginFormView: UIView {
             return
         }
         
-        dismissButton.fit(to: parent, top: 0, trailing: 0)
-        dismissButton.square(ofSize: Layout.spacing56)
-        
-        form.fit(to: parent, leading: 0, trailing: 0)
-        form.attach(to: dismissButton, targetPosition: .bottom)
-        form.height(Layout.spacing300)
-        
-        elementStack.fit(inside: form, leading: Layout.spacing16, top: Layout.spacing20, trailing: Layout.spacing16, bottom: Layout.spacing48)
+        form.fit(inside: self)
+        elementStack.fit(inside: form, leading: Layout.spacing20, top: Layout.spacing16, trailing: Layout.spacing20, bottom: Layout.spacing16)
+        fit(inside: parent)
     }
     
-    private static func genericFormButton(type: CustomButtonType = .default(type: .custom), enabled: Bool = false, title: String) -> UIButton {
+    private static func genericFormButton(type: Button.CustomType = .default(type: .custom), enabled: Bool = false, title: String) -> UIButton {
         let button: UIButton = Button(type: type )
         
         button.isEnabled = false

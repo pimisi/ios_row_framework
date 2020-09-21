@@ -12,27 +12,39 @@ struct Colour {
 
     private init() {}
     
-    private static let `default` = UIColor()
+    private static let `defaultColor` = UIColor()
     
-    // MARK: Colour
+    static let primary = UIColor(named: "primary") ?? `defaultColor`
+    static let primaryHover = UIColor(named: "primaryHover") ?? `defaultColor`
+    static let secondary = UIColor(named: "secondary") ?? `defaultColor`
     
-    static let primary = UIColor(named: "primary") ?? `default`
-    static let secondary = UIColor(named: "secondary") ?? `default`
-
-    static let background = UIColor(named: "background") ?? `default`
+    // MARK: - Background
     
-    // MARK: White
+    struct Background {
+        static let `default` = UIColor(named: "background") ?? `defaultColor`
+        static let pale = UIColor.from(hex: "F8F8F8")
+    }
+    
+    // MARK: - White
     
     static let white = UIColor(named: "white") ?? .white
     
-    // MARK: - Black & Grayscale
+    // MARK: - Black
     
-    static let lightGrey = UIColor(named: "lightGrey") ?? `default`
-    static let grey = UIColor(named: "grey") ?? `default`
-    static let mediumGrey = UIColor(named: "mediumGrey") ?? `default`
-    static let darkGrey =  UIColor(named: "darkGrey") ?? `default`
-    static let dark = UIColor(named: "dark") ?? `default`
+    static let dark = UIColor(named: "dark") ?? `defaultColor`
     static let black = UIColor(named: "black") ?? .black
+    static let clear = UIColor.clear
     
-    static let transparent = UIColor.white.withAlphaComponent(0.0)
+    // MARK: - Grey
+    
+    struct Grey {
+        static let `default` = UIColor(named: "grey") ?? `defaultColor`
+        static let pale = UIColor(named: "f8f")
+        static let light = UIColor(named: "lightGrey") ?? `defaultColor`
+        static let medium = UIColor(named: "mediumGrey") ?? `defaultColor`
+        static let dark =  UIColor(named: "darkGrey") ?? `defaultColor`
+        static let dcd = UIColor(named: "dcd") ?? `defaultColor`
+    }
+    
+    static let transparent = UIColor.clear
 }

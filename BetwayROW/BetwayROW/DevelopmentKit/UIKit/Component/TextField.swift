@@ -52,12 +52,12 @@ public class TextField: UITextField {
         borderStyle = .none
         font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.medium)
         textColor = Colour.dark
-        layer.borderColor = Colour.lightGrey.cgColor
+        layer.borderColor = Colour.Grey.light.cgColor
         layer.borderWidth = 1.0
         backgroundColor = Colour.white
         
         if let placeholderText: String = placeholder {
-            self.attributedPlaceholder =  NSAttributedString(string: placeholderText, attributes: [NSAttributedString.Key.foregroundColor: Colour.grey])
+            self.attributedPlaceholder =  NSAttributedString(string: placeholderText, attributes: [NSAttributedString.Key.foregroundColor: Colour.Grey.default])
         }
         
         switch type {
