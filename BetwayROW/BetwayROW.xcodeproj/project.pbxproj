@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3DB2BE661AE745ECF3CF4859 /* Pods_BetwayROWUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DB31194D44BC4B543CD408 /* Pods_BetwayROWUITests.framework */; };
+		454674FB251A0773003BD2AB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454674FA251A0773003BD2AB /* LoginViewModel.swift */; };
 		B1B2A8732B052625B4EB4BFD /* Pods_BetwayROW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE9316158316474758E06F2 /* Pods_BetwayROW.framework */; };
 		C0C03657B9EA417B62230AB6 /* Pods_BetwayROWTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F089FCEC3E8186CC982D78 /* Pods_BetwayROWTests.framework */; };
 		CE5B4CE2250F911500E7C0B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B4CDF250F911500E7C0B4 /* LoginViewController.swift */; };
@@ -116,6 +117,7 @@
 
 /* Begin PBXFileReference section */
 		1FE9316158316474758E06F2 /* Pods_BetwayROW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetwayROW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		454674FA251A0773003BD2AB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		72995B6E967E6692B8D309BA /* Pods-BetwayROW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetwayROW.release.xcconfig"; path = "Target Support Files/Pods-BetwayROW/Pods-BetwayROW.release.xcconfig"; sourceTree = "<group>"; };
 		8D5E14B29DC287A373B62E02 /* Pods-BetwayROWUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetwayROWUITests.debug.xcconfig"; path = "Target Support Files/Pods-BetwayROWUITests/Pods-BetwayROWUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		987D3A62E2C2B53004FAE6F2 /* Pods-BetwayROWTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetwayROWTests.release.xcconfig"; path = "Target Support Files/Pods-BetwayROWTests/Pods-BetwayROWTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -256,6 +258,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		454674F9251A0736003BD2AB /* Viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				454674FA251A0773003BD2AB /* LoginViewModel.swift */,
+			);
+			path = Viewmodel;
+			sourceTree = "<group>";
+		};
 		C32452FBD72C9638AF391435 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,7 +325,6 @@
 			isa = PBXGroup;
 			children = (
 				D8D21F802512308100AA307B /* Protocol */,
-				D8D21F7F2512307800AA307B /* Type */,
 				CE7BFEAC250BA486009CDCDF /* Localization.strings */,
 				CE7BFEB0250BA80E009CDCDF /* Localizable.swift */,
 			);
@@ -470,6 +479,7 @@
 		D8D21F7C25122CB600AA307B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				454674F9251A0736003BD2AB /* Viewmodel */,
 				D8D21F7E25122CDC00AA307B /* Component */,
 				D8D21F7D25122CBD00AA307B /* Controller */,
 			);
@@ -491,13 +501,6 @@
 				D85AC4CE25124C830086D478 /* LoginFormView.swift */,
 			);
 			path = Component;
-			sourceTree = "<group>";
-		};
-		D8D21F7F2512307800AA307B /* Type */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Type;
 			sourceTree = "<group>";
 		};
 		D8D21F802512308100AA307B /* Protocol */ = {
@@ -1036,6 +1039,7 @@
 				D8A0D4DA2514E66C008ACBE9 /* UITextField+Extension.swift in Sources */,
 				D8D96EF8250A4F3300B0F26B /* Message.swift in Sources */,
 				D8D96EFA250A4F3300B0F26B /* API.swift in Sources */,
+				454674FB251A0773003BD2AB /* LoginViewModel.swift in Sources */,
 				D8D96EF1250A4F3300B0F26B /* FailureReason.swift in Sources */,
 				D8A0D4EA25187FDF008ACBE9 /* AlertAction.swift in Sources */,
 				D8D96EF7250A4F3300B0F26B /* Constant.swift in Sources */,

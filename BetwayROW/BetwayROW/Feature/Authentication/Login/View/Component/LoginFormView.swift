@@ -126,11 +126,8 @@ class LoginFormView: UIView {
     
     private static func genericFormButton(type: Button.CustomType = .default(type: .custom), enabled: Bool = false, title: String) -> UIButton {
         let button: UIButton = Button(type: type )
-        
         button.isEnabled = false
-        button.setTitle(Text.Button.forgotPassword, for: .normal)
-        
+        button.setTitle(title, for: .normal)
         return button
     }
-    
 }

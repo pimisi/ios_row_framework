@@ -10,8 +10,8 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     
+    lazy var loginViewModel = LoginViewModel()
     lazy var loginFormView = LoginFormView(parent: view)
-    
     var loginTitleText = AuthenticationConstant.Component.login
     var didTapCloseView: (() -> Void)?
     
