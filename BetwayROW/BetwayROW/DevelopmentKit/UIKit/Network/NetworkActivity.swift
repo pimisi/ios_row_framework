@@ -57,7 +57,7 @@ class NetworkActivity {
     
     private init() {
         start = { [weak self] in
-            DispatchQueue.main.async {
+            Application.shared.updateUI {
                 if self?.activityView == nil {
                     let rootViewController = AppDelegate.rootViewController
                     if let presented = rootViewController?.presentedViewController {
@@ -74,7 +74,7 @@ class NetworkActivity {
         }
         
         stop = { [weak self] in
-            DispatchQueue.main.async {
+            Application.shared.updateUI {
                 self?.activityView?.stop(stopped: {
                     self?.activityView = nil
                 })
