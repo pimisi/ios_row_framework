@@ -8,5 +8,8 @@
 
 final class LoginViewModel {
     
+    func login(userName: String, password: String) {
+        
+    }
     
 }
