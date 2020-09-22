@@ -42,11 +42,15 @@ class ErrorCoordinator {
         }
         
         if let displayMessage = uiMessage {
-            DispatchQueue.main.async {
-                if let viewController = AppDelegate.rootViewController {
+            Application.shared.updateUI {
+                if let viewController = AppDelegate.rootViewController,
+                   let presented = viewController.presentedViewController ?? viewController {
+                    
+                    let hostViewController = presented is UINavigationController ? presented.children.first ?? presented : presented
+                    
                     AlertController.okayAlert(withTitle: displayMessage.title, message: displayMessage.detail)
                         .secondary(handler: self.action)
-                        .showIn(viewController, completion: {
+                        .showIn(hostViewController, completion: {
                             self.action = nil
                         })
                 }

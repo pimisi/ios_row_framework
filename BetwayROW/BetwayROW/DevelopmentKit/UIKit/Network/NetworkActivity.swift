@@ -6,7 +6,7 @@
 //  Copyright © 2020 Betway. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 typealias GenericVoidClosure = (() -> Void)
 
@@ -60,10 +60,14 @@ class NetworkActivity {
             DispatchQueue.main.async {
                 if self?.activityView == nil {
                     let rootViewController = AppDelegate.rootViewController
-                    let presentedView = rootViewController?.presentedViewController
+                    if let presented = rootViewController?.presentedViewController {
                     
-                    if let view = presentedView?.isBeingPresented == true ? rootViewController?.view : presentedView?.view ?? rootViewController?.view {
-                        self?.activityView = ActivityIndicatorView.show(in: view)
+                        let hostViewController = presented is UINavigationController ? presented.children.first ?? presented : presented
+                        
+                        if let view = presented.isBeingPresented == true ? rootViewController?.view : presented.view ?? hostViewController.view {
+                        // if let view = rootViewController?.view ?? hostViewController.view {
+                            self?.activityView = ActivityIndicatorView.show(in: view)
+                        }
                     }
                 }
             }

@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias ApplicationDataKey = String
+
 class Application {
     
     private init() {}
@@ -18,14 +20,8 @@ class Application {
     let ui = UIApplication.shared
     var data: [String: Any] = [:]
     
-    enum DataKey {
-        case productID
-        
-        var stringValue: String {
-            switch self {
-            case .productID: return ApplicationConstant.Data.Key.productID
-            }
-        }
+    class DataKey {
+        static let productID: ApplicationDataKey = ApplicationConstant.Data.Key.productID
     }
     
     var defaults: UserDefaults {
@@ -39,11 +35,11 @@ class Application {
     }
     
     func set(productID: Int) {
-        data[DataKey.productID.stringValue] = productID
+        data[DataKey.productID] = productID
     }
     
-    func get(valuefor key: DataKey) -> String {
-        return data.string(forKey: key.stringValue)
+    func get(valuefor key: ApplicationDataKey) -> String {
+        return data.string(forKey: key)
     }
     
     func updateUI(_ execute: @escaping () -> Void) {

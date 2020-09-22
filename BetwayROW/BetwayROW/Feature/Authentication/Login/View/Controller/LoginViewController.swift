@@ -10,28 +10,47 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     
-    lazy var loginViewModel = LoginViewModel()
-    lazy var loginFormView = LoginFormView(parent: view)
-    var loginTitleText = AuthenticationConstant.Component.login
-    var didTapCloseView: (() -> Void)?
+    static var instance: LoginViewController {
+        return LoginViewController(nibName: nil, bundle: Bundle(for: LoginViewController.self))
+    }
     
-    // MARK: ViewDidLoad
+    let loginViewContainer = UIView()
+    
+    lazy var loginView = LoginFormView(parent: loginViewContainer)
+    lazy var loginViewModel = LoginViewModel()
+    
+    // var loginTitleText = AuthenticationConstant.Component.login
+    // var didTapCloseView: (() -> Void)?
+    
+    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        attachLoginForm()
+    }
+    
+    override func didMove(toParent parent: UIViewController?) {
+        super.didMove(toParent: parent)
         
         attachLoginForm()
-        configureView()
+        configureLoginForm()
+        // self.loginViewModel.login(username: "EbesterNot", password: "password")
     }
     
     private func attachLoginForm() {
-        loginFormView.attachToParent()
+        let loginAlert = AlertController(title: Localizable.localized(key: "LOGIN"))
+
+        loginView.attachToParent()
+        loginAlert.bodyView = loginViewContainer
+        loginAlert.showDismissIcon = true
+        
+        parent?.present(loginAlert, animated: true, completion: nil)
     }
     
-    private func configureView() {
-        self.title = loginTitleText
-        view.isOpaque = false
-        view.backgroundColor = Colour.transparent
+    private func configureLoginForm() {
+        loginView.didTouchUpOnLogin = {
+            self.loginViewModel.login(username: "EbesterNot", password: "password")
+        }
     }
 }
 
