@@ -91,7 +91,6 @@ class APIClient: APIClientProtocol {
                     } catch let error {
                         debugLog(String(describing: Self.self), message: "Error decoding response data: \(error.localizedDescription)")
                     }
-                    // TODO: Log to splunk
                 }
                 
                 if error == nil {

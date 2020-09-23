@@ -95,6 +95,7 @@ class AlertView: UIView {
                 if !bodyView.isInStack(mainContentStack) {
                     mainContentStack.insertArrangedSubView(bodyView, after: messageLabel)
                 }
+                messageLabel.removeConstraint(.height)
             }
         }
     }
@@ -137,8 +138,12 @@ class AlertView: UIView {
         if message != nil {
             messageLabel.margins(margin: Layout.spacing32)
             mainContentStack.spacing = Layout.spacing16
+            contentStack.spacing = Layout.spacing16
+            messageLabel.height(Layout.Size.size56, dimensionAmount: .atLeast)
         } else {
             mainContentStack.spacing = Layout.spacing0
+            contentStack.spacing = Layout.spacing0
+            messageLabel.removeConstraint(.height)
         }
         
         backgroundColor = .clear

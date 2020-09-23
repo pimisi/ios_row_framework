@@ -12,7 +12,7 @@ class AlertController: UIViewController {
     
     let preferredStyle: UIAlertController.Style
     lazy var alertView = AlertView(parent: view)
-
+    
     override var title: String? {
         get { super.title }
         set { super.title = newValue }
@@ -40,7 +40,7 @@ class AlertController: UIViewController {
     }
     
     public init(title: String?, message: String? = nil, preferredStyle: UIAlertController.Style = .alert) {
-    
+        
         self.preferredStyle = preferredStyle
         
         super.init(nibName: nil, bundle: nil)
@@ -59,17 +59,17 @@ class AlertController: UIViewController {
         self.preferredStyle = .alert
         super.init(coder: coder)
     }
-        
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         parentController = presentingViewController
     }
-        
+    
     func addAction(_ action: AlertAction) {
         alertView.addAction(action)
     }
-        
+    
     @objc func dismiss() {
         parentController?.dismiss(animated: true, completion: nil)
     }
@@ -104,15 +104,21 @@ extension AlertController {
     ///
     static func okayAlert(withTitle title: String, message: String?, handler: AlertActionHandler? = nil) -> AlertController {
         let controller = alert(withTitle: title, message: message)
-        controller.addAction(withTitle: "OK", style: .system(.default), handler: handler)
+        controller.okayAction(handler: handler)
         return controller
+    }
+    
+    @discardableResult
+    func okayAction(style: AlertAction.Style = .primary, handler: AlertActionHandler? = nil) -> AlertController {
+        addAction(withTitle: "OK", style: .primary, handler: handler)
+        return self
     }
     
     /// This adds a `UIAlertAction` button to the `UIAlertController` instance before presenting it to the user.
     /// - parameter title: This is the title for the action being added
     /// - parameter style: This is the `UIAlertAction.Style` to use for the resulting button of the action.
     ///
-    func addAction(withTitle title: String, style: AlertAction.Style, handler: AlertActionHandler?) {
+    func addAction(withTitle title: String, style: AlertAction.Style = .primary, handler: AlertActionHandler?) {
         let action = AlertAction(title: title, style: style, handler: handler)
         self.addAction(action)
     }

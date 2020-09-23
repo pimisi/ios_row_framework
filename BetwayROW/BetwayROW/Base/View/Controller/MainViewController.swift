@@ -28,16 +28,7 @@ class MainViewController: UIViewController {
     }
     
     @objc private func didTapLogin() {
-        let loginAlert = AlertController(title: Localizable.localized(key: "LOGIN"))
-        
-        let loginViewContainer = UIView()
-        loginViewContainer.backgroundColor = .blue
-        let loginView = LoginFormView(parent: loginViewContainer)
-        loginView.attachToParent()
-        loginAlert.bodyView = loginViewContainer
-        loginAlert.showDismissIcon = true
-        
-        parent?.present(loginAlert, animated: true, completion: nil)
+        let loginViewController = attach(viewController: LoginViewController.instance, includeView: false)
     }
 }
 
@@ -45,4 +36,18 @@ class MainViewController: UIViewController {
 
 extension MainViewController {
     var loginButtonTitle: String { Localizable.localized(key: "LOGIN")}
+    
+    @discardableResult
+    func attach(viewController controller: UIViewController, includeView: Bool = true) -> UIViewController {
+        controller.willMove(toParent: self)
+        addChild(controller)
+        
+        if includeView {
+            controller.view.frame = view.bounds
+            view.addSubview(controller.view)
+        }
+        controller.didMove(toParent: self)
+        
+        return controller
+    }
 }

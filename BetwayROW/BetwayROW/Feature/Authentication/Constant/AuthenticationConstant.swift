@@ -27,3 +27,17 @@ extension Constant {
         }
     }
 }
+
+extension APIEndpoint {
+    
+    class Authentication: ConstantType {
+        static let base = Constant.API.BaseURL.restOfWorld + "Authentication/"
+        class Login: ConstantType {
+            static let base = Authentication.base + "Login/10"
+        }
+    }
+}
+
+extension ApplicationConstant.Data.Key {
+    static let userLoggedIn = "UserLoggedIn"
+}

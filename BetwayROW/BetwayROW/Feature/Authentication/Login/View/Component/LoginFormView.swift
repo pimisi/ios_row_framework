@@ -65,7 +65,7 @@ class LoginFormView: UIView {
         return textField
     }()
     
-    let loginButton: UIButton = genericFormButton(type: .primary, title: Text.Button.login)
+    let loginButton: UIButton = genericFormButton(type: .primary, enabled: true, title: Text.Button.login)
     let registerButton: UIButton = genericFormButton(type: .secondary, title: Text.Button.register)
     let forgotPasswordButton: UIButton = genericFormButton(title: Text.Button.forgotPassword)
     
@@ -91,7 +91,9 @@ class LoginFormView: UIView {
         return stackView
     }()
     
-    var didTapCloseView: (() -> Void)?
+    var didDismissView: (() -> Void)?
+    var didTouchUpOnLogin: (() -> Void)?
+    var didTouchUpOnRegister: (() -> Void)?
     
     init(parent: UIView) {
         self.parent = parent
@@ -99,6 +101,7 @@ class LoginFormView: UIView {
         super.init(frame: .zero)
         
         setDismissView()
+        attachButtonTargets()
     }
     
     required init?(coder: NSCoder) {
@@ -106,14 +109,26 @@ class LoginFormView: UIView {
         super.init(coder: coder)
     }
     
+    private func attachButtonTargets() {
+        loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
+        registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
+    }
+    
+    @objc private func login() {
+        didTouchUpOnLogin?()
+    }
+    
+    @objc private func register() {
+        didTouchUpOnRegister?()
+    }
+    
     private func setDismissView() {
         dismissButton.handleCloseButtonTapped = { [weak self] in
-            self?.didTapCloseView?()
+            self?.didDismissView?()
         }
     }
     
     func attachToParent() {
-        
         guard let parent = parent else {
             debugLog(String(describing: self), message: "The parent view cannot be nil")
             return
@@ -126,11 +141,8 @@ class LoginFormView: UIView {
     
     private static func genericFormButton(type: Button.CustomType = .default(type: .custom), enabled: Bool = false, title: String) -> UIButton {
         let button: UIButton = Button(type: type )
-        
-        button.isEnabled = false
-        button.setTitle(Text.Button.forgotPassword, for: .normal)
-        
+        button.isEnabled = enabled
+        button.setTitle(title, for: .normal)
         return button
     }
-    
 }

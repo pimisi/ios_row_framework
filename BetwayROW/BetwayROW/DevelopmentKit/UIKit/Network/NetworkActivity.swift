@@ -6,7 +6,7 @@
 //  Copyright © 2020 Betway. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 typealias GenericVoidClosure = (() -> Void)
 
@@ -54,25 +54,32 @@ class NetworkActivity {
             completed = newValue
         }
     }
-    
+        
     private init() {
         start = { [weak self] in
+            guard let self = self else { return }
+            
             DispatchQueue.main.async {
-                if self?.activityView == nil {
-                    let rootViewController = AppDelegate.rootViewController
-                    let presentedView = rootViewController?.presentedViewController
+                if self.activityView == nil {
                     
-                    if let view = presentedView?.isBeingPresented == true ? rootViewController?.view : presentedView?.view ?? rootViewController?.view {
-                        self?.activityView = ActivityIndicatorView.show(in: view)
+                    guard let rootViewController = AppDelegate.rootViewController,
+                          let presented = rootViewController.presentedViewController else {
+                        return
                     }
+                    
+                    let targetView: UIView = presented.presentedViewController?.view ?? presented.view
+                    
+                    self.activityView = ActivityIndicatorView.show(in: targetView)
                 }
             }
         }
         
         stop = { [weak self] in
-            DispatchQueue.main.async {
-                self?.activityView?.stop(stopped: {
-                    self?.activityView = nil
+            guard let self = self else { return }
+            
+            Application.shared.updateUI {
+                self.activityView?.stop(stopped: {
+                    self.activityView = nil
                 })
             }
         }

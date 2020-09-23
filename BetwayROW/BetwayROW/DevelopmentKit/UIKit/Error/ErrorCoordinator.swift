@@ -20,6 +20,43 @@ class ErrorCoordinator {
     
     var action: ((AlertAction) -> Void)?
     
+    var suspendedPresentedViewController: UIViewController?
+    
+    fileprivate func displayAlert(for displayMessage: Constant.UIMessage) {
+        Application.shared.updateUI {
+            guard let rootViewController = AppDelegate.rootViewController,
+                  let presented = rootViewController.presentedViewController else {
+                return
+            }
+            let alertController = AlertController(title: displayMessage.title, message: displayMessage.detail)
+            
+            if presented.presentedViewController != nil {
+                self.suspendedPresentedViewController = presented.presentedViewController
+                
+                alertController
+                    .okayAction(handler: { _ in
+                        alertController.dismiss(animated: true) {
+                            if let suspendedViewController = self.suspendedPresentedViewController {
+                                presented.present(suspendedViewController, animated: true, completion: nil)
+                            }
+                        }
+                    })
+                    .secondary(handler: self.action)
+                
+                presented.presentedViewController?.dismiss(animated: false, completion: {
+                    alertController.showIn(presented, completion: { self.action = nil })
+                })
+            } else {
+                alertController
+                    .okayAction()
+                    .secondary(handler: self.action)
+                    .showIn(presented, completion: {
+                        self.action = nil
+                    })
+            }
+        }
+    }
+    
     func processError() {
         var uiMessage: Constant.UIMessage?
         
@@ -42,15 +79,7 @@ class ErrorCoordinator {
         }
         
         if let displayMessage = uiMessage {
-            DispatchQueue.main.async {
-                if let viewController = AppDelegate.rootViewController {
-                    AlertController.okayAlert(withTitle: displayMessage.title, message: displayMessage.detail)
-                        .secondary(handler: self.action)
-                        .showIn(viewController, completion: {
-                            self.action = nil
-                        })
-                }
-            }
+            displayAlert(for: displayMessage)
         }
     }
 }

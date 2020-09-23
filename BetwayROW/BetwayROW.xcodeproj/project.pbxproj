@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3DB2BE661AE745ECF3CF4859 /* Pods_BetwayROWUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DB31194D44BC4B543CD408 /* Pods_BetwayROWUITests.framework */; };
+		454674FB251A0773003BD2AB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454674FA251A0773003BD2AB /* LoginViewModel.swift */; };
+		4546752A251A2099003BD2AB /* LoginClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45467529251A2099003BD2AB /* LoginClient.swift */; };
+		45467530251A2273003BD2AB /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4546752F251A2273003BD2AB /* Login.swift */; };
+		45467536251A3251003BD2AB /* AuthenticationApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45467535251A3251003BD2AB /* AuthenticationApplication+Extension.swift */; };
 		B1B2A8732B052625B4EB4BFD /* Pods_BetwayROW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE9316158316474758E06F2 /* Pods_BetwayROW.framework */; };
 		C0C03657B9EA417B62230AB6 /* Pods_BetwayROWTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F089FCEC3E8186CC982D78 /* Pods_BetwayROWTests.framework */; };
 		CE5B4CE2250F911500E7C0B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B4CDF250F911500E7C0B4 /* LoginViewController.swift */; };
@@ -30,7 +34,6 @@
 		D8A0D5052518CF34008ACBE9 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A0D5042518CF34008ACBE9 /* CGFloat+Extension.swift */; };
 		D8BD726B2514898300F837B0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BD726A2514898300F837B0 /* UIColor+Extension.swift */; };
 		D8C0C40D2513F0BB006DE4D0 /* APIOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0C40C2513F0BB006DE4D0 /* APIOption.swift */; };
-		D8C0C4282513F271006DE4D0 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0C4272513F271006DE4D0 /* File.swift */; };
 		D8D21F362512252400AA307B /* ConfigurationConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D21F272512252300AA307B /* ConfigurationConstant.swift */; };
 		D8D21F372512252400AA307B /* GamingSystemsConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D21F282512252300AA307B /* GamingSystemsConstant.swift */; };
 		D8D21F382512252400AA307B /* ApplicationConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D21F292512252300AA307B /* ApplicationConstant.swift */; };
@@ -117,6 +120,10 @@
 
 /* Begin PBXFileReference section */
 		1FE9316158316474758E06F2 /* Pods_BetwayROW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetwayROW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		454674FA251A0773003BD2AB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		45467529251A2099003BD2AB /* LoginClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginClient.swift; sourceTree = "<group>"; };
+		4546752F251A2273003BD2AB /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		45467535251A3251003BD2AB /* AuthenticationApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthenticationApplication+Extension.swift"; sourceTree = "<group>"; };
 		72995B6E967E6692B8D309BA /* Pods-BetwayROW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetwayROW.release.xcconfig"; path = "Target Support Files/Pods-BetwayROW/Pods-BetwayROW.release.xcconfig"; sourceTree = "<group>"; };
 		8D5E14B29DC287A373B62E02 /* Pods-BetwayROWUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetwayROWUITests.debug.xcconfig"; path = "Target Support Files/Pods-BetwayROWUITests/Pods-BetwayROWUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		987D3A62E2C2B53004FAE6F2 /* Pods-BetwayROWTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetwayROWTests.release.xcconfig"; path = "Target Support Files/Pods-BetwayROWTests/Pods-BetwayROWTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -143,7 +150,6 @@
 		D8A0D5042518CF34008ACBE9 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
 		D8BD726A2514898300F837B0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		D8C0C40C2513F0BB006DE4D0 /* APIOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIOption.swift; sourceTree = "<group>"; };
-		D8C0C4272513F271006DE4D0 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		D8D21F272512252300AA307B /* ConfigurationConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationConstant.swift; sourceTree = "<group>"; };
 		D8D21F282512252300AA307B /* GamingSystemsConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamingSystemsConstant.swift; sourceTree = "<group>"; };
 		D8D21F292512252300AA307B /* ApplicationConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationConstant.swift; sourceTree = "<group>"; };
@@ -258,6 +264,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		454674F9251A0736003BD2AB /* Viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				454674FA251A0773003BD2AB /* LoginViewModel.swift */,
+			);
+			path = Viewmodel;
+			sourceTree = "<group>";
+		};
+		45467528251A2085003BD2AB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				45467529251A2099003BD2AB /* LoginClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4546752E251A222C003BD2AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4546752F251A2273003BD2AB /* Login.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		45467534251A3240003BD2AB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				45467535251A3251003BD2AB /* AuthenticationApplication+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		C32452FBD72C9638AF391435 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +320,7 @@
 		CE5B4CD9250F911500E7C0B4 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				45467534251A3240003BD2AB /* Extension */,
 				D8D21F83251231A900AA307B /* Constant */,
 				CE5B4CDD250F911500E7C0B4 /* Login */,
 			);
@@ -291,6 +330,8 @@
 		CE5B4CDD250F911500E7C0B4 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				4546752E251A222C003BD2AB /* Model */,
+				45467528251A2085003BD2AB /* Network */,
 				D8D21F7C25122CB600AA307B /* View */,
 			);
 			path = Login;
@@ -317,7 +358,6 @@
 			isa = PBXGroup;
 			children = (
 				D8D21F802512308100AA307B /* Protocol */,
-				D8D21F7F2512307800AA307B /* Type */,
 				CE7BFEAC250BA486009CDCDF /* Localization.strings */,
 				CE7BFEB0250BA80E009CDCDF /* Localizable.swift */,
 			);
@@ -357,14 +397,6 @@
 				D8A0D4E925187FDF008ACBE9 /* AlertAction.swift */,
 			);
 			path = AlertController;
-			sourceTree = "<group>";
-		};
-		D8C0C4262513F271006DE4D0 /* Scrapbook */ = {
-			isa = PBXGroup;
-			children = (
-				D8C0C4272513F271006DE4D0 /* File.swift */,
-			);
-			path = Scrapbook;
 			sourceTree = "<group>";
 		};
 		D8D21F262512252300AA307B /* Constant */ = {
@@ -480,6 +512,7 @@
 		D8D21F7C25122CB600AA307B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				454674F9251A0736003BD2AB /* Viewmodel */,
 				D8D21F7E25122CDC00AA307B /* Component */,
 				D8D21F7D25122CBD00AA307B /* Controller */,
 			);
@@ -501,13 +534,6 @@
 				D85AC4CE25124C830086D478 /* LoginFormView.swift */,
 			);
 			path = Component;
-			sourceTree = "<group>";
-		};
-		D8D21F7F2512307800AA307B /* Type */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Type;
 			sourceTree = "<group>";
 		};
 		D8D21F802512308100AA307B /* Protocol */ = {
@@ -552,7 +578,6 @@
 		D8D96E8F250A4A4800B0F26B /* BetwayROW */ = {
 			isa = PBXGroup;
 			children = (
-				D8C0C4262513F271006DE4D0 /* Scrapbook */,
 				D8D96E9E250A4A4C00B0F26B /* Info.plist */,
 				D8D96E96250A4A4C00B0F26B /* Assets.xcassets */,
 				D8D96EFB250A514F00B0F26B /* Base */,
@@ -1016,6 +1041,7 @@
 				D8D96EED250A4F3300B0F26B /* APIClientProtocol.swift in Sources */,
 				D8A0C036251386DA00227E74 /* UIViewController+Extension.swift in Sources */,
 				D8D96EEE250A4F3300B0F26B /* FailureType.swift in Sources */,
+				4546752A251A2099003BD2AB /* LoginClient.swift in Sources */,
 				D8A0D5052518CF34008ACBE9 /* CGFloat+Extension.swift in Sources */,
 				D8D21F3D2512252400AA307B /* Configuration.swift in Sources */,
 				CE5B4CE2250F911500E7C0B4 /* LoginViewController.swift in Sources */,
@@ -1047,9 +1073,11 @@
 				D8A0D4DA2514E66C008ACBE9 /* UITextField+Extension.swift in Sources */,
 				D8D96EF8250A4F3300B0F26B /* Message.swift in Sources */,
 				D8D96EFA250A4F3300B0F26B /* API.swift in Sources */,
+				45467536251A3251003BD2AB /* AuthenticationApplication+Extension.swift in Sources */,
+				454674FB251A0773003BD2AB /* LoginViewModel.swift in Sources */,
+				45467530251A2273003BD2AB /* Login.swift in Sources */,
 				D8D96EF1250A4F3300B0F26B /* FailureReason.swift in Sources */,
 				D8A0D4EA25187FDF008ACBE9 /* AlertAction.swift in Sources */,
-				D8C0C4282513F271006DE4D0 /* File.swift in Sources */,
 				D8D96EF7250A4F3300B0F26B /* Constant.swift in Sources */,
 				D8D21F412512252400AA307B /* Application+Extension.swift in Sources */,
 				D8D96EF4250A4F3300B0F26B /* APIFieldError.swift in Sources */,

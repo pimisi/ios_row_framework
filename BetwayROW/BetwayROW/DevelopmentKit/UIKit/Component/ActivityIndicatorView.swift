@@ -22,13 +22,13 @@ class ActivityIndicatorView: UIView {
     }
     
     private func startAnimation() {
-        DispatchQueue.main.async {
+        Application.shared.updateUI {
             self.activityIndicator.startAnimating()
         }
     }
     
     private func stopAnimation() {
-        DispatchQueue.main.async {
+        Application.shared.updateUI {
             self.activityIndicator.stopAnimating()
             self.removeFromSuperview()
         }
