@@ -32,4 +32,6 @@ public class Constant: ConstantType {
             }
         }
     }
+    
+    class Storyboard: ConstantType {}
 }

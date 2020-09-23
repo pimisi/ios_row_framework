@@ -162,8 +162,9 @@ extension UIView {
         }
     }
     
-    func add(to view: UIView, translateFrameToConstraints: Bool = false) {
+    func add(to view: UIView, translatesAutoresizingMaskIntoConstraints translate: Bool = true, translateFrameToConstraints: Bool = false) {
         view.addSubview(self)
+        translatesAutoresizingMaskIntoConstraints(translate)
         
         if translateFrameToConstraints {
             self.translateFrameToConstraints()
@@ -256,13 +257,10 @@ extension UIView {
         if borderView == nil {
             borderView = UIView.init(frame: CGRect.zero)
             borderView?.accessibilityIdentifier = "\(UIView.borderIdentifier).\(viewBorder.position)"
-            borderView?.add(to: self)
-            borderView?.translatesAutoresizingMaskIntoConstraints(false)
+            borderView?.add(to: self, translatesAutoresizingMaskIntoConstraints: false)
         }
         
-        guard let borderViewInstance = borderView else {
-            return debugLog("BorderView is nil")
-        }
+        guard let borderViewInstance = borderView else { return debugLog("BorderView is nil") }
         
         borderViewInstance.backgroundColor = viewBorder.color
         let inferredMargin = max(frame.width - viewBorder.length, 0) / 2
@@ -460,6 +458,11 @@ extension UIView {
     func removeAllConstraints() {
         removeConstraints(constraints)
         removeConstraints(positionConstraints)
+    }
+    
+    func removeConstraint(_ attribute: NSLayoutConstraint.Attribute) {
+        let targetConstraints: [NSLayoutConstraint] = constraints.compactMap { $0.firstAttribute == attribute && $0.firstItem as? UIView == self ? $0 : nil }
+        removeConstraints(targetConstraints)
     }
 }
 

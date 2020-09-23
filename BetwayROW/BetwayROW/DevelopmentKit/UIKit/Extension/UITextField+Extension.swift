@@ -46,4 +46,12 @@ extension UITextField {
         get { return layer.borderWidth }
         set { bordered(width: newValue, color: borderColor) }
     }
+    
+    @IBInspectable public var cornerRadius:CGFloat {
+        get { return layer.cornerRadius }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
 }

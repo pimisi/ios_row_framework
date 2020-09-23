@@ -52,6 +52,7 @@ public enum Layout {
         static let size70: CGFloat = 70
         static let size72: CGFloat = 72
         static let size80: CGFloat = 80
+        static let size100: CGFloat = 100
         static let size120: CGFloat = 120
         static let size250: CGFloat = 250
         static let size300: CGFloat = 300
