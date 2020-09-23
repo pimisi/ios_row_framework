@@ -19,6 +19,16 @@ class NetworkActivity {
     
     static let shared = NetworkActivity()
     
+    private lazy var activityViewController: UIViewController = {
+        let viewController = UIViewController()
+        
+        viewController.view.backgroundColor = Colour.clear
+        viewController.modalTransitionStyle = .crossDissolve
+        viewController.modalPresentationStyle = .overFullScreen
+        
+        return viewController
+    }()
+    
     /// The status of the `NetworkActivity` instance at any given time
     private(set) var status: Status?
     
@@ -57,18 +67,22 @@ class NetworkActivity {
     
     private init() {
         start = { [weak self] in
+            
+            guard let self = self else { return }
+            
             Application.shared.updateUI {
-                if self?.activityView == nil {
+                if self.activityView == nil {
                     let rootViewController = AppDelegate.rootViewController
-                    if let presented = rootViewController?.presentedViewController {
+                    let presentedViewController = rootViewController?.presentedViewController
+                    let hostViewController = presentedViewController is UINavigationController ? presentedViewController?.children.first ?? presentedViewController : presentedViewController
                     
-                        let hostViewController = presented is UINavigationController ? presented.children.first ?? presented : presented
-                        
-                        if let view = presented.isBeingPresented == true ? rootViewController?.view : presented.view ?? hostViewController.view {
-                        // if let view = rootViewController?.view ?? hostViewController.view {
-                            self?.activityView = ActivityIndicatorView.show(in: view)
-                        }
-                    }
+                    self.activityView = ActivityIndicatorView.show(in: self.activityViewController.view)
+                    hostViewController?.present(self.activityViewController, animated: true, completion: nil)
+                    //                        if let view = presentedViewController.isBeingPresented == true ? rootViewController?.view : presentedViewController.view ?? hostViewController.view {
+                    //                        // if let view = rootViewController?.view ?? hostViewController.view {
+                    //                            self.activityView = ActivityIndicatorView.show(in: view)
+                    //                        }
+                    
                 }
             }
         }

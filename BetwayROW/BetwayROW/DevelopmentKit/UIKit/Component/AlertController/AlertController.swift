@@ -104,7 +104,7 @@ extension AlertController {
     ///
     static func okayAlert(withTitle title: String, message: String?, handler: AlertActionHandler? = nil) -> AlertController {
         let controller = alert(withTitle: title, message: message)
-        controller.addAction(withTitle: "OK", style: .system(.default), handler: handler)
+        controller.addAction(withTitle: "OK", style: .primary, handler: handler)
         return controller
     }
     

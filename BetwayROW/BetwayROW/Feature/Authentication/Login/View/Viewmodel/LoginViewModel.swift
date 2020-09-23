@@ -17,9 +17,10 @@ final class LoginViewModel: NetworkActivityAware {
             self.networkActivityComplete()
             switch result {
             case .success(payload: let data):
+                debugLog("Data Fetched: \(data)")
                 Application.shared.set(userLoggedIn: true)
             case .failure(let failure):
-                debugLog(String(describing: self), message: "Error Loging in: \(String(describing: failure?.description))")
+                debugLog(String(describing: self), message: "Error Logging in: \(String(describing: failure?.description))")
                 ErrorCoordinator.shared.error = failure
             }
         }

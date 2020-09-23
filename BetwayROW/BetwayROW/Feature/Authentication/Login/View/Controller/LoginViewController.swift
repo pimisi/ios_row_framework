@@ -44,12 +44,13 @@ final class LoginViewController: UIViewController {
         loginAlert.bodyView = loginViewContainer
         loginAlert.showDismissIcon = true
         
-        parent?.present(loginAlert, animated: true, completion: nil)
+        // parent?.present(loginAlert, animated: true, completion: nil)
+        self.loginViewModel.login(username: "EBester061", password: "esport12")
     }
     
     private func configureLoginForm() {
         loginView.didTouchUpOnLogin = {
-            self.loginViewModel.login(username: "EbesterNot", password: "password")
+            self.loginViewModel.login(username: "EBester06", password: "esport12")
         }
     }
 }

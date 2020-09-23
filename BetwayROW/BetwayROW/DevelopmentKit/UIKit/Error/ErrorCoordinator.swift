@@ -44,9 +44,9 @@ class ErrorCoordinator {
         if let displayMessage = uiMessage {
             Application.shared.updateUI {
                 if let viewController = AppDelegate.rootViewController,
-                   let presented = viewController.presentedViewController ?? viewController {
+                   let presentedViewController = viewController.presentedViewController ?? viewController {
                     
-                    let hostViewController = presented is UINavigationController ? presented.children.first ?? presented : presented
+                    let hostViewController = presentedViewController is UINavigationController ? presentedViewController.children.first ?? presentedViewController : presentedViewController
                     
                     AlertController.okayAlert(withTitle: displayMessage.title, message: displayMessage.detail)
                         .secondary(handler: self.action)
