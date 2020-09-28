@@ -35,3 +35,41 @@ public class Constant: ConstantType {
     
     class Storyboard: ConstantType {}
 }
+
+extension Constant {
+    class Component: ConstantType {
+        static let identificationList = [
+            "Boat License",
+            "Credencialde Elector",
+            "CPF",
+            "CPR",
+            "CURP",
+            "DNI",
+            "Drivers License Number",
+            "Gun Licence",
+            "Identity Card",
+            "Identity Card Number",
+            "Identity Certificate Number",
+            "Identity Document",
+            "Military Id",
+            "National RN Number",
+            "Nat Reg Number",
+            "NIE",
+            "Other",
+            "PAN",
+            "Passport",
+            "Passport Registry Number",
+            "Pension Book",
+            "Personal Identification Number",
+            "Personal ID Card BT Model",
+            "Personal ID Card AT Model",
+            "Registro Federalde Contribuyentes",
+            "Residence Permit",
+            "Social Security Card",
+            "Swedish Personal Id",
+            "Thermal Plant Permit",
+            "Travel Document",
+            "Unknown",
+        ]
+    }
+}

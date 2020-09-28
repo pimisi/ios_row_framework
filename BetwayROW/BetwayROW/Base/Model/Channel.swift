@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Configuration: Codable {
+struct Channel: Codable {
     let android: Int?
     let ios: Int?
     let webdesktop: Int?

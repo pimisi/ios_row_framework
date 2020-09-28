@@ -27,7 +27,7 @@ class LoginFormView: UIView {
         static let login = AuthenticationConstant.Component.login
         
         // swiftlint:disable nesting
-        struct `Button` {
+        struct ButtonText {
             static let close = Image.close
             static let login = AuthenticationConstant.Component.Button.login
             static let register = AuthenticationConstant.Component.Button.register
@@ -65,9 +65,9 @@ class LoginFormView: UIView {
         return textField
     }()
     
-    let loginButton: UIButton = genericFormButton(type: .primary, enabled: true, title: Text.Button.login)
-    let registerButton: UIButton = genericFormButton(type: .secondary, title: Text.Button.register)
-    let forgotPasswordButton: UIButton = genericFormButton(title: Text.Button.forgotPassword)
+    let loginButton: UIButton = genericFormButton(type: .primary, enabled: true, title: Text.`ButtonText`.login)
+    let registerButton: UIButton = genericFormButton(type: .secondary, title: Text.`ButtonText`.register)
+    let forgotPasswordButton: UIButton = genericFormButton(title: Text.`ButtonText`.forgotPassword)
     
     // MARK: - Form
     

@@ -28,7 +28,50 @@ class MainViewController: UIViewController {
     }
     
     @objc private func didTapLogin() {
-        let loginViewController = attach(viewController: LoginViewController.instance, includeView: false)
+        // LoginViewController.instance.display(in: self)
+        attach(viewController: LoginViewController.instance, includeView: false)
+        
+        // PlayPen.shared.login()
+        //        let alertController = AlertController.okayAlert(withTitle: "displayMessage.title", message: "displayMessage.detail")
+        //            .secondary(handler: nil)
+        //        alertController.showIn(self, animated: true, completion: nil)
+        //        alertController.showIn(self, animated: true, completion: {
+        //                self.action = nil
+        //            })
+        
+        //        let loginAlert = AlertController(title: Localizable.localized(key: "LOGIN"), message: "This is a message")
+        //
+        //        let loginViewContainer = UIView()
+        //        loginViewContainer.backgroundColor = .blue
+        //        let loginView = LoginFormView(parent: loginViewContainer)
+        //        loginView.attachToParent()
+        //        loginAlert.bodyView = loginViewContainer
+        //        loginAlert.showDismissIcon = true
+        
+        //        parent?.present(loginAlert, animated: true, completion: {
+        //            PlayPen.shared.login()
+        //        })
+    }
+    
+    @IBAction func didTouchUpOnRegistration(_ sender: Any) {
+        presentRegistrationView()
+    }
+    
+    @IBAction func didTouchUpOnChat(_ sender: Any) {
+    }
+    
+    @IBAction func didTouchUpOnPromo(_ sender: Any) {
+    }
+}
+
+extension MainViewController {
+    func presentRegistrationView() {
+        let controller = RegistrationViewController.instance
+        controller.view.frame = self.view.bounds
+        controller.willMove(toParent: self)
+        addChild(controller)
+        view.addSubview(controller.view)
+        controller.didMove(toParent: self)
     }
 }
 

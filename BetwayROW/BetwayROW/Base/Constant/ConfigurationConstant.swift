@@ -13,5 +13,8 @@ extension APIEndpoint {
         static let base = Constant.API.BaseURL.restOfWorld + "Configuration/"
         static let channels = "Channels/"
         static let clientInfo = "ClientInfo"
+        static let nationalities = "Countries"
+        static let countries = "Countries/BBG"
+        static let currencies = "Currencies/BBG"
     }
 }
