@@ -12,6 +12,7 @@ final class LoginClient: APICientResponseProtocol {
     
     typealias LoginCompletionResult = Result<Login, Failure>
     typealias LoginCompletion = (_ result: LoginCompletionResult) -> Void
+    
     private let client: APIClientProtocol
     let baseURL = APIEndpoint.Authentication.Login.base
     
@@ -38,8 +39,8 @@ final class LoginClient: APICientResponseProtocol {
         client.post(data: nil,
                     to: nil,
                     options: options,
-                    returnAsData: true) { (data, error, response) in
-            self.processResponse(data: data, error: error, response: response, extectedStatusCode: 200, completion: completion)
+                    returnAsData: true) { [weak self] data, error, response in
+            self?.processResponse(data: data, error: error, response: response, extectedStatusCode: 200, completion: completion)
         }
     }
 }

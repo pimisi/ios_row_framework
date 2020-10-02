@@ -35,6 +35,10 @@ struct Colour {
     static let black = UIColor(named: "black") ?? .black
     static let clear = UIColor.clear
     
+    static let error = UIColor.red
+    static let errorText = UIColor.red
+    static let errorBorder = UIColor.red
+    
     // MARK: - Grey
     
     struct Grey {

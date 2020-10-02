@@ -28,7 +28,6 @@ class MainViewController: UIViewController {
     }
     
     @objc private func didTapLogin() {
-        // LoginViewController.instance.display(in: self)
         attach(viewController: LoginViewController.instance, includeView: false)
         
         // PlayPen.shared.login()
@@ -54,24 +53,13 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func didTouchUpOnRegistration(_ sender: Any) {
-        presentRegistrationView()
+        attach(viewController: RegistrationViewController.instance)
     }
     
     @IBAction func didTouchUpOnChat(_ sender: Any) {
     }
     
     @IBAction func didTouchUpOnPromo(_ sender: Any) {
-    }
-}
-
-extension MainViewController {
-    func presentRegistrationView() {
-        let controller = RegistrationViewController.instance
-        controller.view.frame = self.view.bounds
-        controller.willMove(toParent: self)
-        addChild(controller)
-        view.addSubview(controller.view)
-        controller.didMove(toParent: self)
     }
 }
 

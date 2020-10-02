@@ -18,7 +18,7 @@ class BaseViewModel: ProcessMonitoring {
     var loading: ((_ loading: Bool) -> Void)?
     var complete: ((_ complete: Bool) -> Void)?
     
-    func getConfiguration() {
+    func getChannels() {
         
         processing.set(loading: true)
         
@@ -42,8 +42,9 @@ class BaseViewModel: ProcessMonitoring {
         
         sitemapClient.getSiteMap { result in
             switch result {
-            case .success(payload: _):
+            case .success(let sitemap):
                 self.processing.set(success: true)
+                Application.shared.set(siteMap: sitemap)
             case .failure(let failure):
                 debugLog(String(describing: Self.self), message: "Error fetching sitemap: \(String(describing: failure?.description))")
                 

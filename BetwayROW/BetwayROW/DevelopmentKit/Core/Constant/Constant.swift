@@ -34,6 +34,10 @@ public class Constant: ConstantType {
     }
     
     class Storyboard: ConstantType {}
+    
+    class Defaults {
+        static let appOpenCount = "appOpenCount"
+    }
 }
 
 extension Constant {
@@ -69,7 +73,7 @@ extension Constant {
             "Swedish Personal Id",
             "Thermal Plant Permit",
             "Travel Document",
-            "Unknown",
+            "Unknown"
         ]
     }
 }

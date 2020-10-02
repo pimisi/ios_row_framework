@@ -25,3 +25,8 @@ extension Constant.Application {
         return regionCode
     }()
 }
+
+extension Constant.Application.Data.Key {
+    static let siteMap = "SiteMap"
+    static let selectedProduct = "SelectedProduct"
+}

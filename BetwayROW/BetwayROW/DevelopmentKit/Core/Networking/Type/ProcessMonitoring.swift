@@ -22,11 +22,19 @@ extension ProcessMonitoring {
         processing.updated = { [weak self] type in
             switch type {
             case .loading:
-                self?.loading?(processing.processes.reduce(into: false, { $0 = $0 || $1.loading }))
+                self?.loading?(self?.isLoading ?? false)
             case .completion:
-                self?.complete?(processing.processes.reduce(into: true, { $0 = $0 && $1.success }))
+                self?.complete?(self?.isComplete ?? false)
             }
         }
         return processing
+    }
+    
+    var isLoading: Bool {
+        return processing.processes.reduce(into: false, { $0 = $0 || $1.loading })
+    }
+    
+    var isComplete: Bool {
+        return processing.processes.reduce(into: true, { $0 = $0 && $1.success })
     }
 }

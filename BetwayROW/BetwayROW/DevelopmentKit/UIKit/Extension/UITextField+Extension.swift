@@ -54,4 +54,33 @@ extension UITextField {
             layer.masksToBounds = newValue > 0
         }
     }
+    
+    var isEmpty: Bool {
+        return text == nil || text?.isEmpty == true
+    }
+    
+    func clear() {
+        text = ""
+    }
+    
+    func validate(with selector: Selector? = nil, argument: String? = nil, allowEmpty: Bool = false) -> Bool {
+        var isValid: Bool = false
+        
+        if let selector = selector {
+            let object: Unmanaged<AnyObject> = Application.shared.perform(selector, with: argument ?? text)
+            isValid = object.takeRetainedValue() as? Bool ?? false
+        }
+        
+        if !allowEmpty {
+            isValid = isValid && !isEmpty
+        }
+        
+        if !isValid {
+            bordered(width: 2, color: Colour.error)
+            return true
+        } else {
+            bordered(width: 1, color: Colour.Grey.light)
+            return  false
+        }
+    }
 }

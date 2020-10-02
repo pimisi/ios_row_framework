@@ -155,6 +155,7 @@ class APIClient: APIClientProtocol {
         mutableOptions.method = .get
         mutableOptions.expectedStatusCode = mutableOptions.expectedStatusCode ?? 200
         mutableOptions.httpHeaders = [
+            APIHeaders.Key.productID: Application.shared.get(valuefor: Application.DataKey.productID),
             APIHeaders.Key.referer: APIHeaders.Value.referer
             ].merging(mutableOptions.httpHeaders ?? [:]) { $1 }
         

@@ -10,14 +10,17 @@ import UIKit
 
 typealias ApplicationDataKey = String
 
-class Application {
+class Application: NSObject {
     
-    private init() {}
+    private override init() { super.init()}
     
     static var shared = Application()
     
     // swiftlint:disable identifier_name
     let ui = UIApplication.shared
+    let keyboard = Keyboard()
+    let validation = Validation()
+    
     var data: [String: Any] = [:]
     
     class DataKey {
@@ -46,5 +49,9 @@ class Application {
         DispatchQueue.main.async {
             execute()
         }
+    }
+    
+    class Validation {
+        fileprivate init() {}
     }
 }

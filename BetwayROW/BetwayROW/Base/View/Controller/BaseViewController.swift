@@ -39,12 +39,12 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         
         bindViewModel()
-        getConfiguration()
+        getChannels()
         getSiteMap()
     }
     
     @IBAction func retry(_ sender: Any) {
-        getConfiguration()
+        getChannels()
         getSiteMap()
     }
 }
@@ -75,8 +75,8 @@ extension BaseViewController {
         }
     }
     
-    func getConfiguration() {
-        viewModel.getConfiguration()
+    func getChannels() {
+        viewModel.getChannels()
     }
     
     func getSiteMap() {

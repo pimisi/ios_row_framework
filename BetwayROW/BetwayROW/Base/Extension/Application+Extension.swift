@@ -17,4 +17,22 @@ extension Application {
     var defaultBTag: String? {
         return ApplicationConstant.defaultBTag
     }
+    
+    func set(siteMap: SiteMap) {
+        data[DataKey.siteMap] = siteMap
+    }
+    
+    func set(selectedProductForItem item: Int) {
+        guard let siteMap = data.object(forKey: DataKey.siteMap) as? SiteMap,
+              let mid = siteMap.sitemap[item]?.MID else {
+            return
+        }
+        
+        data[DataKey.selectedProduct] = mid
+    }
+}
+
+extension Application.DataKey {
+    static let siteMap: ApplicationDataKey = ApplicationConstant.Data.Key.siteMap
+    static let selectedProduct: ApplicationDataKey = ApplicationConstant.Data.Key.selectedProduct
 }
